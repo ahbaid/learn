@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+s1="c:\dir\file.txt"
+print(s1)
+
+s2=r"c:\dir\file.txt"
+print(s2)
+
+s3=raw(s1)
+print(s3)

@@ -1,0 +1,43 @@
+Given the following function skeleton:
+
+def divideBy3(number):
+  """This function takes an integer between -1000 and 1000 and divides it by
+3 *without* using the built-in '/' operator. It returns the quotient and
+remainder as a tuple. If a number falls outside this range, divideBy3
+returns None."""
+  ...
+  return(quotient, remainder)
+
+Fill in the code, and put the above function (and any additional functions
+you need) in a python module call mydivideby3.py
+
+Now write a test module called mydivideby3_test.py which will import
+'unittest' and 'mydivideby3' and will run some tests on it to show that your
+program produces correct results. Please write sufficient number of tests to
+show that you program behave correctly on a variety of input.
+
+You can implement the division in your function, anyway you like. By the
+way, since you are not using the built-in '/' operator to do the division,
+the differences in Python 2.x vs 3.x in their handling of '/' should not
+affect you!
+
+For example, mydivideby3(7) should return the tuple (2,1), and
+mydivideby3(3) should return (1,0). Lastly, mydivideby3(10000) should return
+None by itself (not a tuple containing None.)
+
+To make my work a bit easier, please create a directory using your name as
+the name of the directory. Put mydivideby3.py and mydivideby3_test.py in
+that directory. Now zip up that directory and submit that to me. For
+example, if I was submitting this work, I would have laid it out as:
+
+AdilLotia/
+  mydivideby3.py
+  mydivideby3_test.py
+
+And then zipped up the AdilLotia folder.  Also, when emailing the .zip file
+to me, please mention 'Homework 5' in the Subject: line.
+
+Please don't hesitate to ping me if something isn't clear.
+
+Thanks,
+-Adil 

@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+
+import re, sys
+
+# Open the file
+f=open("earthquakes_2009.txt","r")
+
+# regular expression buildup
+#regex='^Magnitude 7.*(Ju).*2009$'
+#regex='^Magnitude 7.*\\bJu(ne|ly)+\\b.*2009$'
+#regex='^Magnitude (\d+\.\d+)\s.*\\bJu(ne|ly)+\\b.*2009$'
+#regex='^Magnitude (?P<mag>\d+\.\d+)\s.*\\bJu(ne|ly)+\\b.*2009$'
+
+# Final regular expression
+regex='^Magnitude (?P<mag>\d+\.\d+)\s.*\\bJu(ne|ly)+\\b.*2009$'
+
+# compile the regular expression since we will be searching many lines with the same expression
+compiled_regex=re.compile(regex)
+
+# read the lines
+for line in f:
+
+   # Strip off the newline
+   eq=line.rstrip('\n')
+
+   # Search the line
+   
+   result=compiled_regex.search(eq)
+   if result and float(result.group('mag')) >= 7.0:
+      print(eq)
+      
+
+# Close the file
+if not f.closed: f.close()

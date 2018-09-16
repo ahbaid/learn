@@ -1,0 +1,40 @@
+class Intervals():
+
+   def __init__(self):
+      self.L=[0]
+
+   def add_interval(self,t):
+      if (t[1] > self.L.__len__()-1):
+         for i in range(self.L.__len__(), t[1]+1):
+            self.L.append(0)
+      for i in range(t[0],t[1]+1):
+         self.L[i] += 1
+
+   def remove_interval(self,t):
+       safe=True
+       for i in range(t[0],t[1]+1):
+         safe=(self.L[i] > 0)
+         if (not safe): break
+       if safe:
+         for i in range(t[0], t[1]+1):
+            self.L[i]-=1
+
+   def coverage(self):
+      ctr = intcvg = 0 			
+      for i in range(0,self.L.__len__()):
+         if (self.L[i] <> 0): 
+            ctr+=1
+         elif ((self.L[i] == 0) and (ctr > 0)):
+            intcvg+=ctr-1
+            ctr=0
+      if (ctr>0): intcvg+=ctr-1
+      return intcvg
+
+def main():
+    Points=[ (4,7), (7,9), (2,6) ]
+    I = Intervals()
+    for p in Points: I.add_interval(p)
+    print "Interval coverage: ", I.coverage(), "\n"
+
+if __name__ == "__main__":
+   main()

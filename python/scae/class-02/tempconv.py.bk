@@ -1,0 +1,60 @@
+#!/usr/bin/env python
+###################################################################
+# Author:       Ahbaid Gaffoor
+# Date:         Dec 7th 2010
+# File:         tempconv.py
+# Desc:         Temperature Conversion between celsius and farenheit
+# Use:          SCAE Homework Assignment 12/06/2010
+####################################################################
+
+'''
+Function ctof converts celsius to farenheit
+'''
+def ctof(t): return t*9/5+32
+
+'''
+Function ftoc converts farenheit to celsius
+'''
+def ftoc(t): return (t-32)*5/9
+
+# {{{ __main__  run if script is called directly
+
+if __name__ == "__main__":
+
+   # Import sys for command line argument processing
+   import sys
+
+   # Verify arguments were passed, if not print an error message and exit
+   if len(sys.argv) < 2:
+      print('\n',sys.argv[0]," t")
+      print(' t : temperature in Celsius (C) or Farenheit(F) , example 14C or 57F\n')
+      exit()
+   
+   # We have two arguments, expecting an entry of the form nnnnU where
+   # nnnn are decimal numbers and u is a unit represented by one of {'c','C','f','F'}
+   elif len(sys.argv) == 2:
+   
+      # Extract the last character from the passed string and convert it to upper case
+      # This should be the unit
+      u=sys.argv[1][sys.argv[1].__len__()-1].upper()
+   
+      # Verify unit is C (Celsius) or F (Farenheit)
+      # Exit if it is not one of these values
+      if 'CF'.find(u) == -1:
+         print('\nUnit must be either \'C\' (Celsius) or \'F\' (Farenheit)\n')
+
+      else:
+
+         # Extract the numeric portion of the string, the temperature to be converted
+         # If the numberic portion is non-numeric print an error and exit
+         try:
+            t=int(sys.argv[1][:sys.argv[1].__len__()-1])
+         except ValueError:
+            print('\nTemperature must be of the form n*{C|F} where n is in [0..9]\n')
+            exit()
+   
+         # Do the temperature conversion, c = (f-32)*5/9, f = c*9/5+32
+         if u=='C':   print(sys.argv[1],'=',"%.2f"%round(ctof(t),2)+'F')
+         elif u=='F': print(sys.argv[1],'=',"%.2f"%round(ftoc(t),2)+'C')
+
+# }}} __main__ ends

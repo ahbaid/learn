@@ -1,0 +1,32 @@
+PDB Debugger:
+=============
+
+   From the interpreter:
+   
+   - import the pdb module
+   - import <your module to debug>
+   - pdb.run('<statement as string>')
+   
+   - in the debugger:
+     - b func2 (stop at beginning of function)
+     - c (continue)
+     - b (to list all breakpoints)
+     - p <var> (print variable)
+     - ignore <breapoint> (ignore breakpoint n)
+     - q (quit)
+   
+   From your code:
+   
+      import pdb
+      pdb.set_trace() # drop into the debugger
+
+
+Data Persistence & Db Programming:
+==================================
+Pickle module:
+- save a data struct to a file
+- read a data struct from a file
+- no introspection of saved file, you need to know what's saved
+
+
+

@@ -1,0 +1,21 @@
+Python Code Checking:
+=====================
+
+- PyLint
+- pep8 : python enhancement proposal for code style (http://www.python.org/dev/peps/pep-0008/)
+
+
+Python Code Coverage:
+=====================
+- tells what parts of code are run or not
+- http://pypi.python.org/pypi/coverage
+
+
+Resources:
+==========
+Dive into Python: http://diveintopython.org
+Dive into Python 3: http://diveintopython3.org
+Invent games with python: inventwithpython.com
+Solve problems pythonchallenge.com
+Jython - jython.org
+Iron Python for windows programmers

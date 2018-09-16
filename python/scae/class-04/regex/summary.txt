@@ -1,0 +1,40 @@
+Regular Expressions
+===================
+
+Greedy Match: .*
+Non-Greedy Match: .*?
+
+This is a string with possible substring entries
+Greedy ^.*string
+Non-Greedy ^.*?string matches up to the first occurrence only
+
+For regular expression matching in Python, import the re package
+
+re.search - searches the whole string
+re.match - match starts at the beginning of the string
+
+
+.  any except newline
+^  start
+$  end
+*  0 or more matches
++  1 or more matches
+?  0 or 1 matches only
+{m} match m occurences of preceeding regex
+{m,n} matches m to n occurrences of 
+
+
+\w - word
+\d - digit
+\s - space
+
+
+Modules
+=======
+import
+from <module> import
+
+
+Hw wk 4:
+========
+Earthquake data graphs from HTML files
