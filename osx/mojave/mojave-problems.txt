@@ -1,0 +1,2 @@
+1) Git does not work, producing "xcrun" invalid active developer path errors.
+- Solution: "xcode-select --install"
