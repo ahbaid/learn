@@ -1,0 +1,160 @@
+Postgres 11 New Features
+
+- WAL segment size configurable
+Change from 16M without compile
+$initdb -D /-grata —wal-segsize=32
+
+- pg_stat_statements
+Queryid 64-bit value
+Less risk of collisions 25% risk after 3BN instead of 50K
+Check AppD and Monitoring software for change
+
+- Indexes
+Expression index stats:
+Create index xyz on measured (x,y, (z+t));
+Alter index xyz alter column 3 set statistics 1000;
+
+Include Indexes
+Create unique index uxyz on t1 using tree (id) include (2ndField);
+
+-  Automatic prewarm of cache
+Pg_prewarm already exists
+Dump every 5 mins
+Reload cache with data
+Auto load on restart
+HA pre-warm for failovers
+Background & backfill cache
+
+-  More default roles
+Pg_read_server_files
+Pg_write_server_files
+Pg_execute_Server_program
+
+-  Alter table add column
+With NOT NULL DEFAULT values
+Avoid rewrite, pop data as added or accessed
+New rows materialized
+
+-  websearch_to_tsquery
+Like phraseto_tsquery
+
+-  Domain enhancements
+ARRAYs over domains
+Domains over composite types
+
+-  Window Frame clauses
+(Used the function generate_series() to build sample data)
+Full SQL:2011 Support
+RANGE BETWEEN now handles values in addition to rows
+EXCLUSION CLAUSES exclude current row and ties
+
+SELECT i,
+SUM (i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEEDING AND 2 FOLLOWING),
+SUM (i) OVER (ORDER BY i RANGE BETWEEN 2 PRECEEDING AND 2 FOLLOWING)
+FROM NUMBERS
+
+i | sum | sum
+——————
+1 |  9 |  4
+3 | 16 | 9
+5 | 25 | 15
+7 | 35 | 21
+
+-  websearch_to_tsquery
+Like phraseto_tsquery
+
+-  stored procedures
+true sp, no need to return void anymore
+Standard SQL syntax using CALL
+Transaction control beyond save points inside sps
+
+CREATE PROCEDURE myproc1() LANGUAGE plpgsql AS $$
+BEGIN
+   INSERT INTO T1 values(1);
+   COMMIT;
+   INSERT INTO T1 values(2);
+   ROLLBACK;
+END;
+$$
+
+CALL myproc1()
+
+-  Backup and Replication
+
+Advance replication slots (standby replication, register with master)
+Replication slots are not replicated (cascaded standbys)
+	pg_replication_slot_advance(‘test_slot’, ‘0/16788C8’)
+Without consuming
+Slots in sync across nodes
+Mainly for cluster management
+
+- Logical replication of truncate
+Truncate now replicates to standby
+Can be turned off on individual publications
+Default is to replicate
+
+pg_basebackup can exclude unlogged and temp tables from backups
+
+Validate checksums
+- base backups validate checksums by default
+- I/o already paid on backup
+
+Performance
+
+Parallelism added in 9.6, 10 improved, 11 better
+
+Parallel create index
+- tree indexes only
+- Max_parallel_maintenance_workers=2 (default)
+
+Partitioning
+- default partitions (rows that do not match any partition)
+        - CREATE TABLE T1 PARTITION OF p DEFAULT;
+- Allow UPDATE to move rows between partitions
+- Local part indexes
+    - Auto create on every partition as well as future partitions.
+- Cross partition unique constraints
+    - Must include ALL partition keys
+    - Primary Key only
+    - Foreignkeys only one way
+- Insert on Conflict now works with partitioned tables
+- Better partition pruning
+    - Done in executor
+        - Plan time pruning
+        - 2nd set of pruning at execution time
+    - Once at start for parameters
+    - Once at runtime for subqueries etc
+- Hash Partitioning now supported
+    - CREATE TABLE T1 (i isn’t, t text) PARTITION BY HASH(i);
+    - CREATE TABLE T1_1 PARTITION OF T1 FOR VALUES WITH (MODULUS 4, REMAINDER 0);
+- Partition wise joins
+    - Join tables on part key
+    - Identical part key
+    - Joining on complete part key
+    - Default is off
+        - enable_partition_wise_join parameter
+        - Costs more in plan time
+- Partition wise aggregates
+    - Partkey part of GROUP BY
+    - Run aggregates per partition
+    - Summarize at the end
+
+JIT Compiliation
+- LLVM based JIT compilation
+    - Avail deprends on packaging
+- Optimized expression processing
+    - Speeds up analytical queries
+    - Large computational aggregates
+- Auto enabled for expensive queries
+- Tuple forming and de-forming
+
+Magnus Hagander
+Magnus@hagander.net
+www.hagander.net/talks
+
+
+JIT Compilation in PGSQL 11
+- Andres Freud (EDB)
+
+
+
