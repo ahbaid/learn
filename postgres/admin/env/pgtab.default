@@ -1,0 +1,12 @@
+# pgtab - v2.0
+#
+# Entries are of the form: "version:binaries:datadir:port:autostart" where the values are
+#
+#  version 		: Postgres Version (usually x.y) where x is major version number and y is the minor version number
+#  binaries 	: Location of the binaries or installation target
+#  datadir 		: Location of the data directories
+#  port 			: The port to start postgres on (overridden by entry in postgresql.conf)
+#  autostart 	: Autostart postgres on boot (Y|N) 
+# 
+# Example: 10.4:/opt/postgres/10.4:/opt/postgres/10.4/data:1123:N
+#
