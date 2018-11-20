@@ -1,0 +1,89 @@
+# {{{ ============ screen default config ============
+# Ahbaid Gaffoor / ahbaid@gmail.com
+
+startup_message off
+defscrollback 10000
+nonblock on
+term xterm-256color
+
+# {{{ backtick
+#
+# Command: backtick id lifespan autorefresh command [args]
+# Command: backtick id
+#
+# Program the backtick command with the numerical id id. The output of such a command is used for substitution of the %` string escape (see String Escapes). 
+# The specified lifespan is the number of seconds the output is considered valid. After this time, the command is run again if a corresponding string escape 
+# is encountered. The autorefresh parameter triggers an automatic refresh for caption and hardstatus strings after the specified number of seconds. Only the 
+# last line of output is used for substitution.
+# 
+# If both the lifespan and the autorefresh parameters are zero, the backtick program is expected to stay in the background and generate output once in a 
+# while. In this case, the command is executed right away and screen stores the last line of output. If a new line gets printed screen will automatically 
+# refresh the hardstatus or the captions.
+#
+# The second form of the command deletes the backtick command with the numerical id id.
+#
+# }}}
+backtick 0 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+
+# {{{ bindkey settings
+# F3 - prev
+bindkey "^[OR" prev
+# F4 - next
+bindkey "^[OS" next
+# pgUp and pgDn to prev and next window
+bindkey -k kP prev
+bindkey -k kN next
+# ctrl-alt right and left arrows to prev and next window
+#bindkey ^[[1;7D prev
+#bindkey ^[[1;7C next
+# }}} 
+
+# {{{ termcapinfo settings
+# Colors: AB:bground AF:fground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# shift-PgUp shift-PgDn
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+# }}}
+
+# {{{ Hardstatus settings
+# {{{ hardstatus doc
+# http://www.gnu.org/software/screen/manual/html_node/String-Escapes.html
+#
+# %{= wK} : set colors to bright white (W) on bright black (K) and keep current text styles (=)
+# %H      : hostname
+# [       : opening bracket character
+# %`      : print output of 'backtick' command (defined elsewhere in .screenrc)
+# ]       : closing bracket character
+# %{= wW} : set colors to white (w) on bright black (K) and keep current text styles (=)
+# |       : bar character
+# ${-}    : restore colors to previous colors / undo last color change
+# %-Lw    : list windows before current window (L [optional] = "include flags")
+# %{= bW} : set colors to bright white (W) on blue (b) and keep current text styles (=)
+# %f      : window flags
+# %t      : window title
+# %{-}    : restore colors to previous colors / undo last color change
+# %+Lw    : list windows after current window (L [optional] = "include flags")
+# %=      : expand to fill all space (used here to make remaining content flush right)
+# %C      : current time (12-hr; 24-hr is %c)
+# %a      : am/pm (lowercase; uppercase is %A)
+# %Y      : current year
+# -       : hyphen character
+# %m      : current month (0-padded; %M for "Jan" etc.)
+# -       : hyphen character
+# %d      : current date (0-padded)
+#
+#hardstatus string '%{= kG}%-Lw%{= kW}%50> %n*%f %t%{= kG}%+Lw%< %{= kG}%-=%D %m/%d/%y | %C:%s %A | %1`%{-}'
+#hardstatus string "%{= KW} %H [%`] %{= Kw}|%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw %=%C%a %Y-%M-%d"
+#hardstatus string "%{= KW} %{= Kw}%{-} %-Lw%{= bW}%n%f %t%{-}%+Lw %=%C%a %Y-%M-%d"
+#
+# }}}
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+# Hide hardstatus: ctrl-a s
+bind s eval "hardstatus ignore"
+# Show hardstatus: ctrl-a rSF
+bind S eval "hardstatus alwayslastline"
+# }}}
+
+# }}} ============ screen default config ============

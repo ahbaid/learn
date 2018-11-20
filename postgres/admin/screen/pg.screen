@@ -1,0 +1,40 @@
+screen -t "pg-0" /bin/bash
+screen -t "pg-1" /bin/bash
+screen -t "pg-2" /bin/bash
+screen -t "pg-3" /bin/bash
+
+# {{{ ============ screen default config ============
+# Ahbaid Gaffoor / ahbaid@gmail.com
+
+startup_message off
+defscrollback 10000
+nonblock on
+term xterm-256color
+
+# {{{ bindkey settings
+# F3 - prev
+bindkey "^[OR" prev
+# F4 - next
+bindkey "^[OS" next
+# ctrl-alt right and left arrows
+bindkey ^[[1;7D prev
+bindkey ^[[1;7C next
+# }}} 
+
+# {{{ termcapinfo settings
+# Colors: AB:bground AF:fground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# shift-PgUp shift-PgDn
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+# }}}
+
+# {{{ Hardstatus settings
+hardstatus alwayslastline
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+# Hide hardstatus: ctrl-a s
+bind s eval "hardstatus ignore"
+# Show hardstatus: ctrl-a rSF
+bind S eval "hardstatus alwayslastline"
+# }}}
+
+# }}} ============ screen default config ============

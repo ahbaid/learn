@@ -1,3 +1,4 @@
+alias scr="~/admin/screen/scr.sh"
 alias pgalias="alias | grep \"alias pg\" | grep -v grep"
 alias pgenv="set | grep ^PG_ | grep -v grep"
 alias pgfn="declare -F | awk '{print \$3}' | grep ^pg"
