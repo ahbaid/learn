@@ -26,11 +26,16 @@ if [ $# -ne 1 ]; then
    usage
    exit 1
 else
+   # If "-ls" or "ls" is passed as an argument then the screen listing is produced.
+   if [[ $1 =~ ^-*ls$ ]]; then
+      screen -ls
+      exit 0
+   fi
    export SCRSESSION="$1"
 fi
 
 # {{{ variables
-SCRDIR=~/.screen
+SCRDIR=~/admin/screen
 SCRCFGEXT="screen"
 SCRFILE=$SCRDIR/$SCRSESSION.$SCRCFGEXT
 DEFSCRFILE=$SCRDIR/default.$SCRCFGEXT
