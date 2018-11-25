@@ -1,9 +1,0 @@
-alias pgalias="alias | grep \"alias pg\" | grep -v grep"
-alias pgenv="set | grep ^PG_ | grep -v grep"
-alias pgfn="declare -F | awk '{print \$3}' | grep ^pg"
-
-alias pgadm="cd $PG_ADMIN"
-alias pgcfg="cd $PG_CFG"
-alias pgetc="cd $PG_ETC"
-alias pgscr="cd $PG_SCRIPTS"
-alias pgbin="cd $PG_BIN"

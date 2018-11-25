@@ -1,0 +1,15 @@
+# File: prereq-packages-os.txt
+# Pre-requisite packages for compilation of postgres from source 
+# Entries: <dist>:<version>:<package_name>
+#  - dist: ubuntu / centos
+ubuntu:16.04:gcc
+ubuntu:16.04:bison
+ubuntu:16.04:make
+ubuntu:16.04:flex
+ubuntu:16.04:ncurses-dev
+ubuntu:16.04:libreadline-dev
+ubuntu:16.04:libpng-dev
+ubuntu:16.04:libssl-dev
+ubuntu:16.04:libpam-dev
+ubuntu:16.04:libxml2-dev
+ubuntu:16.04:python-dev
