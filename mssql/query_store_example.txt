@@ -1,0 +1,40 @@
+[?1034hbash-3.2$ source mssql.env 
+bash-3.2$ mssql -i query_store_check.sql 
+/* {{{ 
+Author: 	Ahbaid Gaffoor
+File:		query_store_check.sql
+Date:		Sunday Dec 9th 2018
+Notes:   Source the environment variables in "mssql.env" to ensure variables are passed in
+}}} */
+
+--:setvar in-dbname testdb
+
+-- Check if query store is enabled
+select name, is_query_store_on from sys.databases where name = 'testdb';
+
+name is_query_store_on
+---- -----------------
+testdb 1
+
+(1 rows affected)
+
+-- Check detailed information on query store status
+use testdb
+SELECT * FROM sys.database_query_store_options;
+
+Changed database context to 'testdb'.
+desired_state desired_state_desc actual_state actual_state_desc readonly_reason current_storage_size_mb flush_interval_s
+econds interval_length_minutes max_storage_size_mb stale_query_threshold_days max_plans_per_query query_capture_mode que
+ry_capture_mode_desc size_based_cleanup_mode size_based_cleanup_mode_desc wait_stats_capture_mode wait_stats_capture_mod
+e_desc actual_state_additional_info
+------------- ------------------ ------------ ----------------- --------------- ----------------------- ----------------
+------ ----------------------- ------------------- -------------------------- ------------------- ------------------ ---
+-------------------- ----------------------- ---------------------------- ----------------------- ----------------------
+------ ----------------------------
+2 READ_WRITE 2 READ_WRITE 0 0 900 60 100 30 200 1 ALL 1 AUTO 1 ON 
+
+(1 rows affected)
+bash-3.2$ exit
+exit
+
+Script done on Sun Dec  9 14:55:51 2018
