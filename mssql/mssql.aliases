@@ -1,0 +1,1 @@
+alias mssql='sqlcmd -S $SERVERNAME -U sa -P '\''$MSSQLPWD'\'' -d master -w 120 -W -e'

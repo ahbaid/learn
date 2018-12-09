@@ -1,0 +1,22 @@
+# {{{ ----- vm.nr_hugepages configuration -----
+# Allocating 5170 = 5120 + 50 (extra) at 2M page sizes for 10240MB shared memory segment allocation
+#
+# Command to allocate:
+# sysctl -w vm.nr_hugepages=`cat hugepages.txt | grep ^vm.nr_hugepages | awk -F= '{print $2}'`
+# 
+# Command to check:
+# sysctl vm.nr_hugepages
+# }}}
+vm.nr_hugepages=6000
+#
+# {{{ ----- vm.hugetlb_shm_group configuration -----
+# This needs to match the group id (gid) that will be using the hugepages configuration
+# For the postgres:dba user the group id is: 501
+#
+# Command to allocate:
+# sysctl -w vm.hugetlb_shm_group=`cat hugepages.txt | grep ^vm.hugetlb_shm_group | awk -F= '{print $2}'`
+# 
+# Command to check:
+# sysctl vm.hugetlb_shm_group
+# }}}
+vm.hugetlb_shm_group=501
