@@ -1,4 +1,4 @@
-[?1034hbash-3.2$ source mssql.env 
+bash-3.2$ source mssql.env 
 bash-3.2$ mssql -i query_store_check.sql 
 /* {{{ 
 Author: 	Ahbaid Gaffoor
