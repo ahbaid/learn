@@ -8,5 +8,10 @@ Notes:   Source the environment variables in "mssql.env" to ensure variables are
 --:setvar in-dbname testdb
 
 -- Check if query store is enabled
-select name, is_query_store_on from sys.databases where name = '$(inDbname)'
+select name, is_query_store_on from sys.databases where name = '$(inDbname)';
+go
+
+-- Check detailed information on query store status
+use $(inDbname)
+SELECT * FROM sys.database_query_store_options;
 go
