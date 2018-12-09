@@ -1,0 +1,33 @@
+/* {{{ 
+Author: 	Ahbaid Gaffoor
+File:		dbsettings.sql
+Date:		Sunday Dec 9th 2018
+}}} */
+use master
+
+Changed database context to 'master'.
+
+-- Show database version
+select @@version
+
+ 
+-
+Microsoft SQL Server 2019 (CTP2.1) - 15.0.1100.94 (X64) 
+	Nov  1 2018 14:35:49 
+	Copyright (C) 2018 Microsoft Corporation
+	Enterprise Edition (64-bit) on Linux (Ubuntu 18.04.1 LTS) <X64>
+
+(1 rows affected)
+
+-- Check if query store is enabled
+select name, is_query_store_on from sys.databases
+
+name is_query_store_on
+---- -----------------
+master 0
+tempdb 0
+model 0
+msdb 0
+testdb 0
+
+(5 rows affected)
