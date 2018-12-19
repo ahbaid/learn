@@ -1,5 +1,5 @@
 mkdir -p logs
-for p in `seq 27001 27003`; do
+for p in `seq 27000 27006`; do
    mkdir -p data/db-$p 
    mongod --replSet demo \
           --logpath ./logs/$p.log --logappend \
@@ -9,4 +9,4 @@ for p in `seq 27001 27003`; do
           --fork
 done
 
-mongo --port 27001 < replicaset-config.js
+mongo --port 27000 < replicaset-config.js
