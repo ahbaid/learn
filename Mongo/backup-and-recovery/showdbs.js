@@ -1,0 +1,2 @@
+rs.slaveOk();
+show databases

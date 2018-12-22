@@ -1,0 +1,42 @@
+Security:
+=========
+
+- Authentication
+   Are you who you say you are? (AYWYSYA)
+	Community: chall/resp using SCRAM-SHA-1 & x509 auth
+   Ent: Kerberos & LDAP Protocol
+
+- Transport Encryption
+	Disabled
+	Mixed Mode
+	Encryption Enforced
+	FIPS 140
+
+- Internal Authentication
+   Keyfiles
+   x509 certificates
+
+- Authorization:
+   what are you allowed to do?
+   which resources? (databases, collections, cluster)
+   whitelist strategy
+
+- Roles: https://docs.mongodb.com/manual/reference/built-in-roles/
+	DBA: dbAdmin, dbOwner, userAdmin
+   Cluster: clusterAdmin, cluster
+   All dbs
+   DB users
+   Backup & Restore
+   Superuser: root
+   Internal: __system
+
+-- Log Redaction
+    "--redactClientLogData" for mongod and mongos servers
+
+-- Audit Events
+	 schema
+	 replica set and sharded cluster
+    CRUD DML off by DML
+
+    "--auditDestination" to syslog, console, file ("--auditPath" & "--auditFormat" (BSON opr JSON)).
+    "--auditFilter"

@@ -1,0 +1,176 @@
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] MongoDB starting : pid=499 port=27001 dbpath=/opt/mongodb/downloads/course/scripts/performance/./data/db-27001 64-bit host=copper
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] db version v4.0.4
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] git version: f288a3bdf201007f3693c58e140056adf8b04839
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.0g  2 Nov 2017
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] modules: none
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] build environment:
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten]     distmod: ubuntu1804
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-12-20T14:23:32.915-0800 I CONTROL  [initandlisten] options: { net: { port: 27001 }, processManagement: { fork: true }, replication: { oplogSizeMB: 64, replSet: "demo" }, storage: { dbPath: "./data/db-27001", mmapv1: { smallFiles: true } }, systemLog: { destination: "file", logAppend: true, path: "./logs/27001.log" } }
+2018-12-20T14:23:32.916-0800 I STORAGE  [initandlisten] 
+2018-12-20T14:23:32.916-0800 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2018-12-20T14:23:32.916-0800 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2018-12-20T14:23:32.916-0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1460M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-12-20T14:23:34.043-0800 I STORAGE  [initandlisten] WiredTiger message [1545344614:43613][499:0x7f4f1af14a40], txn-recover: Set global recovery timestamp: 0
+2018-12-20T14:23:34.088-0800 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2018-12-20T14:23:34.143-0800 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] 
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] 
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2018-12-20T14:23:34.143-0800 I CONTROL  [initandlisten] 
+2018-12-20T14:23:34.145-0800 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: dd6b7f0a-3560-4886-83b1-a03191c26853
+2018-12-20T14:23:34.194-0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/opt/mongodb/downloads/course/scripts/performance/./data/db-27001/diagnostic.data'
+2018-12-20T14:23:34.194-0800 I STORAGE  [initandlisten] createCollection: local.replset.oplogTruncateAfterPoint with generated UUID: 3a182903-8692-4dd4-9f06-29a821e9f804
+2018-12-20T14:23:34.231-0800 I STORAGE  [initandlisten] createCollection: local.replset.minvalid with generated UUID: 8046c95f-691c-4335-bd25-aedc2f81e5fa
+2018-12-20T14:23:34.272-0800 I REPL     [initandlisten] Did not find local voted for document at startup.
+2018-12-20T14:23:34.272-0800 I REPL     [initandlisten] Did not find local Rollback ID document at startup. Creating one.
+2018-12-20T14:23:34.272-0800 I STORAGE  [initandlisten] createCollection: local.system.rollback.id with generated UUID: fb0ead15-e18f-4c14-a717-ccbb65af9d63
+2018-12-20T14:23:34.308-0800 I REPL     [initandlisten] Initialized the rollback ID to 1
+2018-12-20T14:23:34.308-0800 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument: Did not find replica set configuration document in local.system.replset
+2018-12-20T14:23:34.308-0800 I CONTROL  [LogicalSessionCacheRefresh] Sessions collection is not set up; waiting until next sessions refresh interval: Replication has not yet been configured
+2018-12-20T14:23:34.308-0800 I NETWORK  [initandlisten] waiting for connections on port 27001
+2018-12-20T14:23:34.309-0800 I CONTROL  [LogicalSessionCacheReap] Sessions collection is not set up; waiting until next sessions reap interval: config.system.sessions does not exist
+2018-12-20T14:23:35.920-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36596 #1 (1 connection now open)
+2018-12-20T14:23:35.921-0800 I NETWORK  [conn1] end connection 127.0.0.1:36596 (0 connections now open)
+2018-12-20T14:23:35.923-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36600 #2 (1 connection now open)
+2018-12-20T14:23:35.933-0800 I NETWORK  [conn2] received client metadata from 127.0.0.1:36600 conn2: { driver: { name: "NetworkInterfaceTL", version: "4.0.4" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "18.04" } }
+2018-12-20T14:23:35.933-0800 I ASIO     [Replication] Connecting to localhost:27000
+2018-12-20T14:23:36.816-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36622 #4 (2 connections now open)
+2018-12-20T14:23:36.817-0800 I NETWORK  [conn4] end connection 127.0.0.1:36622 (1 connection now open)
+2018-12-20T14:23:37.947-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36636 #6 (2 connections now open)
+2018-12-20T14:23:37.947-0800 I STORAGE  [replexec-0] createCollection: local.system.replset with generated UUID: 5ee4fba7-b436-4b7b-8156-132c68596455
+2018-12-20T14:23:37.947-0800 I NETWORK  [conn6] end connection 127.0.0.1:36636 (1 connection now open)
+2018-12-20T14:23:37.997-0800 I REPL     [replexec-0] New replica set config in use: { _id: "demo", version: 1, protocolVersion: 1, writeConcernMajorityJournalDefault: true, members: [ { _id: 0, host: "localhost:27000", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 1, host: "localhost:27001", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "localhost:27002", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5c1c1667ab9a4caf727ad33b') } }
+2018-12-20T14:23:37.997-0800 I REPL     [replexec-0] This node is localhost:27001 in the config
+2018-12-20T14:23:37.997-0800 I REPL     [replexec-0] transition to STARTUP2 from STARTUP
+2018-12-20T14:23:37.998-0800 I REPL     [replexec-0] Starting replication storage threads
+2018-12-20T14:23:37.998-0800 I ASIO     [Replication] Connecting to localhost:27002
+2018-12-20T14:23:37.998-0800 I REPL     [replexec-2] Member localhost:27000 is now in state SECONDARY
+2018-12-20T14:23:37.999-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36642 #9 (2 connections now open)
+2018-12-20T14:23:37.999-0800 I REPL     [replexec-1] Member localhost:27002 is now in state STARTUP2
+2018-12-20T14:23:37.999-0800 I NETWORK  [conn9] received client metadata from 127.0.0.1:36642 conn9: { driver: { name: "NetworkInterfaceTL", version: "4.0.4" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "18.04" } }
+2018-12-20T14:23:38.000-0800 I STORAGE  [replexec-0] createCollection: local.temp_oplog_buffer with generated UUID: 2db9630e-041e-4178-b1d1-1fd4805b80b4
+2018-12-20T14:23:38.035-0800 I REPL     [replication-0] Starting initial sync (attempt 1 of 10)
+2018-12-20T14:23:38.035-0800 I STORAGE  [replication-0] Finishing collection drop for local.temp_oplog_buffer (2db9630e-041e-4178-b1d1-1fd4805b80b4).
+2018-12-20T14:23:38.045-0800 I STORAGE  [replication-0] createCollection: local.temp_oplog_buffer with generated UUID: f365f820-94c5-467c-8d88-a7f95e71a50c
+2018-12-20T14:23:38.089-0800 I REPL     [replication-0] sync source candidate: localhost:27000
+2018-12-20T14:23:38.089-0800 I REPL     [replication-0] Initial syncer oplog truncation finished in: 0ms
+2018-12-20T14:23:38.089-0800 I REPL     [replication-0] ******
+2018-12-20T14:23:38.089-0800 I REPL     [replication-0] creating replication oplog of size: 64MB...
+2018-12-20T14:23:38.089-0800 I STORAGE  [replication-0] createCollection: local.oplog.rs with generated UUID: 35e9e63e-ca84-4092-87e9-9efbb8c067c5
+2018-12-20T14:23:38.123-0800 I STORAGE  [replication-0] Starting OplogTruncaterThread local.oplog.rs
+2018-12-20T14:23:38.123-0800 I STORAGE  [replication-0] The size storer reports that the oplog contains 0 records totaling to 0 bytes
+2018-12-20T14:23:38.123-0800 I STORAGE  [replication-0] Scanning the oplog to determine where to place markers for truncation
+2018-12-20T14:23:38.239-0800 I REPL     [replication-0] ******
+2018-12-20T14:23:38.239-0800 I STORAGE  [replication-0] dropAllDatabasesExceptLocal 1
+2018-12-20T14:23:38.239-0800 I ASIO     [RS] Connecting to localhost:27000
+2018-12-20T14:23:38.251-0800 I ASIO     [RS] Connecting to localhost:27000
+2018-12-20T14:23:38.252-0800 I REPL     [replication-0] CollectionCloner::start called, on ns:admin.system.version
+2018-12-20T14:23:38.273-0800 I STORAGE  [repl writer worker 11] createCollection: admin.system.version with provided UUID: d762ecca-00d4-4541-a2d7-ea4f71ecb43c
+2018-12-20T14:23:38.321-0800 I INDEX    [repl writer worker 11] build index on: admin.system.version properties: { v: 2, key: { _id: 1 }, name: "_id_", ns: "admin.system.version" }
+2018-12-20T14:23:38.321-0800 I INDEX    [repl writer worker 11] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2018-12-20T14:23:38.334-0800 I COMMAND  [repl writer worker 15] setting featureCompatibilityVersion to 4.0
+2018-12-20T14:23:38.334-0800 I NETWORK  [repl writer worker 15] Skip closing connection for connection # 9
+2018-12-20T14:23:38.334-0800 I NETWORK  [repl writer worker 15] Skip closing connection for connection # 2
+2018-12-20T14:23:38.334-0800 I REPL     [repl writer worker 15] CollectionCloner ns:admin.system.version finished cloning with status: OK
+2018-12-20T14:23:38.360-0800 I REPL     [repl writer worker 15] Finished cloning data: OK. Beginning oplog replay.
+2018-12-20T14:23:38.361-0800 I REPL     [replication-1] No need to apply operations. (currently at { : Timestamp(1545344616, 1) })
+2018-12-20T14:23:38.361-0800 I REPL     [replication-0] Finished fetching oplog during initial sync: CallbackCanceled: error in fetcher batch callback: oplog fetcher is shutting down. Last fetched optime and hash: { ts: Timestamp(0, 0), t: -1 }[0]
+2018-12-20T14:23:38.361-0800 I REPL     [replication-0] Initial sync attempt finishing up.
+2018-12-20T14:23:38.361-0800 I REPL     [replication-0] Initial Sync Attempt Statistics: { failedInitialSyncAttempts: 0, maxFailedInitialSyncAttempts: 10, initialSyncStart: new Date(1545344618035), initialSyncAttempts: [], fetchedMissingDocs: 0, appliedOps: 0, initialSyncOplogStart: Timestamp(1545344616, 1), initialSyncOplogEnd: Timestamp(1545344616, 1), databases: { databasesCloned: 1, admin: { collections: 1, clonedCollections: 1, start: new Date(1545344618251), end: new Date(1545344618360), elapsedMillis: 109, admin.system.version: { documentsToCopy: 1, documentsCopied: 1, indexes: 1, fetchedBatches: 1, start: new Date(1545344618252), end: new Date(1545344618360), elapsedMillis: 108 } } } }
+2018-12-20T14:23:38.361-0800 I STORAGE  [replication-0] Finishing collection drop for local.temp_oplog_buffer (f365f820-94c5-467c-8d88-a7f95e71a50c).
+2018-12-20T14:23:38.365-0800 I REPL     [replication-0] initial sync done; took 0s.
+2018-12-20T14:23:38.365-0800 I REPL     [replication-0] transition to RECOVERING from STARTUP2
+2018-12-20T14:23:38.365-0800 I REPL     [replication-0] Starting replication fetcher thread
+2018-12-20T14:23:38.365-0800 I REPL     [replication-0] Starting replication applier thread
+2018-12-20T14:23:38.365-0800 I REPL     [replication-0] Starting replication reporter thread
+2018-12-20T14:23:38.365-0800 I REPL     [rsSync-0] Starting oplog application
+2018-12-20T14:23:38.365-0800 I REPL     [rsBackgroundSync] could not find member to sync from
+2018-12-20T14:23:38.365-0800 I REPL     [rsSync-0] transition to SECONDARY from RECOVERING
+2018-12-20T14:23:38.365-0800 I REPL     [rsSync-0] Resetting sync source to empty, which was :27017
+2018-12-20T14:23:38.366-0800 I REPL     [replexec-4] Member localhost:27002 is now in state SECONDARY
+2018-12-20T14:23:38.824-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36666 #12 (3 connections now open)
+2018-12-20T14:23:39.854-0800 I NETWORK  [conn12] end connection 127.0.0.1:36666 (2 connections now open)
+2018-12-20T14:23:40.883-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36690 #13 (3 connections now open)
+2018-12-20T14:23:41.890-0800 I NETWORK  [conn13] end connection 127.0.0.1:36690 (2 connections now open)
+2018-12-20T14:23:42.899-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36714 #14 (3 connections now open)
+2018-12-20T14:23:43.902-0800 I NETWORK  [conn14] end connection 127.0.0.1:36714 (2 connections now open)
+2018-12-20T14:23:44.905-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36738 #15 (3 connections now open)
+2018-12-20T14:23:45.911-0800 I NETWORK  [conn15] end connection 127.0.0.1:36738 (2 connections now open)
+2018-12-20T14:23:46.377-0800 I STORAGE  [conn2] createCollection: local.replset.election with generated UUID: ce52690a-b37f-4696-a922-4c83c81aa9bd
+2018-12-20T14:23:46.912-0800 I REPL     [replexec-3] Member localhost:27000 is now in state PRIMARY
+2018-12-20T14:23:46.914-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36762 #16 (3 connections now open)
+2018-12-20T14:23:47.915-0800 I NETWORK  [conn16] end connection 127.0.0.1:36762 (2 connections now open)
+2018-12-20T14:23:48.277-0800 I ASIO     [RS] Ending connection to host localhost:27000 due to bad connection status; 1 connections to that host remain open
+2018-12-20T14:23:48.422-0800 I REPL     [rsBackgroundSync] sync source candidate: localhost:27000
+2018-12-20T14:23:48.424-0800 I REPL     [rsBackgroundSync] Changed sync source from empty to localhost:27000
+2018-12-20T14:23:48.425-0800 I ASIO     [RS] Connecting to localhost:27000
+2018-12-20T14:23:48.427-0800 I STORAGE  [repl writer worker 2] createCollection: config.transactions with provided UUID: 5c746dcf-dd36-4bc0-bd2e-60a92eb332e4
+2018-12-20T14:23:48.486-0800 I STORAGE  [repl writer worker 3] createCollection: admin.system.keys with provided UUID: 53b819a1-7ac3-4317-9708-2e5fdf2aa83e
+2018-12-20T14:23:48.554-0800 I STORAGE  [replication-1] Triggering the first stable checkpoint. Initial Data: Timestamp(1545344616, 1) PrevStable: Timestamp(0, 0) CurrStable: Timestamp(1545344628, 4)
+2018-12-20T14:23:48.926-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36790 #18 (3 connections now open)
+2018-12-20T14:24:37.686-0800 I STORAGE  [repl writer worker 8] createCollection: foo.testcol with provided UUID: 66a419f5-4405-4a94-8b3d-6e685d2e1237
+2018-12-20T14:26:23.886-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 3ms
+2018-12-20T14:26:41.947-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 1ms
+2018-12-20T14:27:01.165-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 0ms
+2018-12-20T14:27:21.049-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 0ms
+2018-12-20T14:27:44.615-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 0ms
+2018-12-20T14:28:08.453-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 18ms
+2018-12-20T14:28:32.928-0800 I STORAGE  [repl writer worker 15] createCollection: config.system.sessions with provided UUID: 449094ea-9b78-4b68-843e-80479a3feb99
+2018-12-20T14:28:33.141-0800 I INDEX    [repl writer worker 1] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", expireAfterSeconds: 1800, ns: "config.system.sessions" }
+2018-12-20T14:28:33.141-0800 I INDEX    [repl writer worker 1] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2018-12-20T14:28:33.142-0800 I INDEX    [repl writer worker 1] build index done.  scanned 0 total records. 0 secs
+2018-12-20T14:28:33.963-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 95ms
+2018-12-20T14:28:34.310-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002
+2018-12-20T14:28:34.311-0800 I NETWORK  [LogicalSessionCacheRefresh] Successfully connected to localhost:27000 (1 connections now open to localhost:27000 with a 5 second timeout)
+2018-12-20T14:28:34.353-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36810 #20 (4 connections now open)
+2018-12-20T14:28:34.354-0800 I NETWORK  [conn20] received client metadata from 127.0.0.1:36810 conn20: { driver: { name: "MongoDB Internal Client", version: "4.0.4" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "18.04" } }
+2018-12-20T14:28:34.354-0800 I NETWORK  [LogicalSessionCacheRefresh] Successfully connected to localhost:27000 (1 connections now open to localhost:27000 with a 0 second timeout)
+2018-12-20T14:28:34.354-0800 I NETWORK  [ReplicaSetMonitor-TaskExecutor] Successfully connected to localhost:27001 (1 connections now open to localhost:27001 with a 5 second timeout)
+2018-12-20T14:28:34.355-0800 I NETWORK  [ReplicaSetMonitor-TaskExecutor] Successfully connected to localhost:27002 (1 connections now open to localhost:27002 with a 5 second timeout)
+2018-12-20T14:28:35.798-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36818 #24 (5 connections now open)
+2018-12-20T14:28:35.799-0800 I NETWORK  [conn24] received client metadata from 127.0.0.1:36818 conn24: { driver: { name: "MongoDB Internal Client", version: "4.0.4" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "18.04" } }
+2018-12-20T14:28:59.832-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 19ms
+2018-12-20T14:29:28.113-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 36ms
+2018-12-20T14:29:56.508-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 13ms
+2018-12-20T14:30:26.855-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 119ms
+2018-12-20T14:30:59.402-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 62ms
+2018-12-20T14:31:31.926-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 21ms
+2018-12-20T14:32:04.832-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 18ms
+2018-12-20T14:32:40.208-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 22ms
+2018-12-20T14:33:16.542-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 26ms
+2018-12-20T14:33:34.310-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002
+2018-12-20T14:33:53.891-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 12ms
+2018-12-20T14:34:32.485-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 26ms
+2018-12-20T14:35:10.685-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 21ms
+2018-12-20T14:35:53.371-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 20ms
+2018-12-20T14:36:36.709-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 64ms
+2018-12-20T14:37:21.956-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 109ms
+2018-12-20T14:38:04.273-0800 I NETWORK  [listener] connection accepted from 127.0.0.1:36828 #25 (6 connections now open)
+2018-12-20T14:38:06.098-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 48ms
+2018-12-20T14:38:34.310-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002
+2018-12-20T14:38:53.430-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 74ms
+2018-12-20T14:39:42.678-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 79ms
+2018-12-20T14:40:29.983-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 21ms
+2018-12-20T14:41:22.093-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 19ms
+2018-12-20T14:42:13.171-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 18ms
+2018-12-20T14:43:07.411-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 17ms
+2018-12-20T14:43:34.310-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002
+2018-12-20T14:43:34.311-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002
+2018-12-20T14:43:34.311-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002
+2018-12-20T14:43:34.312-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002
+2018-12-20T14:43:59.806-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 11ms
+2018-12-20T14:44:57.559-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 11ms
+2018-12-20T14:45:53.885-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 57ms
+2018-12-20T14:46:53.163-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 65ms
+2018-12-20T14:47:55.239-0800 I STORAGE  [WT OplogTruncaterThread: local.oplog.rs] WiredTiger record store oplog truncation finished in: 25ms
+2018-12-20T14:48:34.310-0800 I NETWORK  [LogicalSessionCacheRefresh] Starting new replica set monitor for demo/localhost:27000,localhost:27001,localhost:27002

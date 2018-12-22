@@ -1,0 +1,45 @@
+Tools:
+======
+mongostat
+mongotop
+db.setProfilingLevel()
+db.currentOp()
+db.<collection>.stats()
+db.serverStatus()
+
+mongostat:
+==========
+mongodb@copper:~/downloads/course/scripts/performance$ mongostat --port=27000
+insert query update delete getmore command dirty used flushes vsize  res qrw arw net_in net_out conn  set repl                time
+  3027     6      3     *0     100    85|0  4.7% 6.4%       0 1.75G 176M 0|0 1|1   304k   3.13m   18 demo  PRI Dec 20 13:28:28.432
+  2930     5      2     *0     127   115|0  4.8% 6.5%       0 1.75G 176M 0|0 1|1   340k   3.06m   18 demo  PRI Dec 20 13:28:29.456
+  3083     6      3     *0     134   112|0  4.9% 6.6%       0 1.75G 177M 0|0 1|0   352k   3.22m   18 demo  PRI Dec 20 13:28:30.429
+  3993     6      2     *0     110   112|0  5.0% 6.7%       0 1.75G 178M 0|0 2|0   385k   3.99m   18 demo  PRI Dec 20 13:28:31.430
+ 
+vsize: memory allocated - virtual and physical
+res - resident memory
+qrw - queued read writes
+arw - average read writes
+
+"*" indicates a replicated operation
+
+mtools:
+=======
+https://github.com/rueckstiess/mtools
+
+mlogfilter
+mloginfo
+mplotqueries
+mlogvis
+mlaunch
+
+mloginfo --queries 27000.log
+mloginfo --rsstate 27000.log 
+mloginfo --connstats 27000.log 
+mlogvis 27000.log
+
+
+
+Hints:
+======
+https://docs.mongodb.com/manual/reference/operator/meta/hint/

@@ -1,0 +1,17 @@
+Doc Level
+- mongodump
+	dumps collection to BSON files
+	does not include indexes
+	"--oplog" to record oplog while backing up
+   "--query/filter" for a selective dump
+   
+- Journaling
+	Use file system journaling
+
+- Ensure consistency
+	db.fsyncLock()
+	Copy/Snapshot at the file system level
+	db.fsyncUnlock()
+
+- mongorestore
+	"--oplogReplay" replay oplog to point in time
