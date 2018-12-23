@@ -5,7 +5,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
 >
 
+   <!-- {{{ title & desc -->
    <title>Cat</title><desc>Stick Figure of a Cat</desc>
+   <!-- }}} title & desc -->
 
    <!-- {{{ face and eyes -->
    <circle cx="70" cy="95" r="50" style="stroke: black; fill: none"/>
