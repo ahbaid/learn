@@ -31,5 +31,9 @@
    <polyline points="35 110, 45 120, 95 120, 105, 110" style="stroke: black; fill: none;" />
    <!-- }}} mouth -->
 
+   <!-- {{{ nose -->
+   <path d="M 75 90 L 65 90 A 5 10 0  0 0 75 90" style="stroke: black; fill: #ffcccc"/>
+   <!-- }}} nose -->
+
 </svg>
 
