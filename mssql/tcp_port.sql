@@ -1,4 +1,5 @@
 -- MSSQL 2012 and higher only
+-- https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql?view=sql-server-2017
 set nocount on
 use master
 go
