@@ -1,0 +1,4 @@
+alias gs='git status -s'
+alias gf='gs | awk '\''{print $2}'\'''
+alias ga='gf | xargs git add'
+alias gc='git commit'
