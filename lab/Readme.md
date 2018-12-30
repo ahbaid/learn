@@ -4,7 +4,7 @@
 ### mssh 
 - Used to alias lab IPs in /etc/hosts
 - entries must match 198.?.?.? hostname shortcut
-- typically "ip hostname shortname" using periodic tale atomic weights for ip, host and shortname
+- typically "ip hostname shortname" using periodic table atomic weights for ip, host and shortname
 - for example "198.1.1.29 copper cu"
 
 ```
