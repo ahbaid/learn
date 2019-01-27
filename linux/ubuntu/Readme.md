@@ -59,5 +59,6 @@ sudo apt-get upgrade mypackage
 ~~~~
 sudo apt install ubuntu-unity-desktop
 ~~~~
+* See https://linuxconfig.org/how-to-install-unity-desktop-on-ubuntu-18-04-bionic-beaver-linux
 
 
