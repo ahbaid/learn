@@ -40,6 +40,19 @@ sudo do-release-upgrade
 sudo do-release-upgrade -d
 ~~~~
 
+# Updating a Single Package
+~~~~
+sudo apt-get install --only-upgrade mypackage
+~~~~
+or
+~~~~
+sudo apt-get dist-upgrade mypackage
+~~~~
+or
+~~~~
+sudo apt-get upgrade mypackage
+~~~~
+
 # Install Unity on 18.04
 * Ubuntu 18.04 uses Gnome as the default desktop.
 * These instructions install the Unity desktop.
