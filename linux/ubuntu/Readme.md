@@ -1,5 +1,8 @@
 # Ubuntu Notes
 
+# Releases
+* https://wiki.ubuntu.com/Releases
+
 # Updating
 ### Update Packages:
 ~~~~
