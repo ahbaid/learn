@@ -10,6 +10,10 @@ sudp apt upgrade
 ~~~~
 sudo apt-dist upgrade
 ~~~~
+### Configure unpacked packages
+~~~~
+dpkg --configure -a
+~~~~
 ### Remove Dependencies for Uninstalled Packages
 ~~~~
 sudo apt-get autoremove
