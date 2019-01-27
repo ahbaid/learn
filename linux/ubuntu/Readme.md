@@ -4,7 +4,11 @@
 * https://wiki.ubuntu.com/Releases
 
 # Updating
-### Update Packages:
+### List Upgradeable Packages
+~~~~
+sudo apt list --upgradeable
+~~~~
+### Update & Upgrade Packages:
 ~~~~
 sudo apt update
 sudp apt upgrade
@@ -34,6 +38,13 @@ sudo do-release-upgrade
 ### Upgrade Release (to the Beta/Development version)
 ~~~~
 sudo do-release-upgrade -d
+~~~~
+
+# Install Unity on 18.04
+* Ubuntu 18.04 uses Gnome as the default desktop.
+* These instructions install the Unity desktop.
+~~~~
+sudo apt install ubuntu-unity-desktop
 ~~~~
 
 
