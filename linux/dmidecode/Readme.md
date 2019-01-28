@@ -9,7 +9,6 @@ Z10PE-D16 Series
 ### Get Motherboard Details
 ~~~~
 $ sudo dmidecode -t baseboard
-$ sudo dmidecode -t baseboard
 # dmidecode 3.1
 Getting SMBIOS data from sysfs.
 SMBIOS 2.8 present.
