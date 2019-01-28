@@ -10,3 +10,9 @@
 * https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb
 ### VirtualBox:
 * https://www.virtualbox.org/wiki/Linux_Downloads
+* 6.0 for Ubuntu 18.04/10 - https://download.virtualbox.org/virtualbox/6.0.2/virtualbox-6.0_6.0.2-128162~Ubuntu~bionic_amd64.deb
+* Pre-requisite packages for 18.04:
+~~~~
+apt install libqt5x11extras5
+apt install libsdl-ttf2.0-0
+~~~~
