@@ -54,3 +54,28 @@ Onboard Device
 	Type Instance: 1
 	Bus Address: 0000:00:19.0
 ~~~~
+
+### Motherboard Manufacturer
+~~~~
+$ sudo dmidecode -s baseboard-manufacturer
+ASUSTeK COMPUTER INC.
+~~~~
+
+### Processor Information
+~~~~
+$ sudo dmidecode -s processor-family
+Xeon
+Xeon
+
+$ sudo dmidecode -s processor-manufacturer
+Intel
+Intel
+
+$ sudo dmidecode -s processor-version
+Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+
+$ sudo dmidecode -s processor-frequency
+2200 MHz
+2200 MHz
+~~~~
