@@ -1,0 +1,41 @@
+set echo on
+
+  CREATE TABLESPACE "ITMS_SUBITEM_INDEX_TS" DATAFILE
+  '/oradata/gcat/data52/itms_subitem_index_ts_01.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_02.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_03.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_04.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_05.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_06.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_07.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_08.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_09.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_10.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_11.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_12.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_13.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_14.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_15.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_16.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_17.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_18.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_19.dbf' SIZE 2000M,
+  '/oradata/gcat/data52/itms_subitem_index_ts_20.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_21.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_22.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_23.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_24.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_25.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_26.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_27.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_28.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_29.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_30.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_31.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_32.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_33.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_34.dbf' SIZE 2000M,
+  '/oradata/gcat/data53/itms_subitem_index_ts_35.dbf' SIZE 2000M
+  LOGGING ONLINE PERMANENT BLOCKSIZE 16K
+  EXTENT MANAGEMENT LOCAL UNIFORM SIZE 100M SEGMENT SPACE MANAGEMENT MANUAL;
+

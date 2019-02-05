@@ -1,0 +1,4 @@
+-- startup mount
+-- alter database tempfile 'your offending file' offline;
+-- alter database tempfile 'your offending file' drop;
+-- alter database open;

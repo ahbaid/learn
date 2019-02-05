@@ -1,0 +1,8 @@
+select name, password,ptime 
+from user$ 
+where type#=1 and name in ('SYS','SYSTEM'
+,'OUTLN','DBSNMP','CSMIG','CTXSYS','TRACESVR','OSE$HTTP$ADMIN','AURORA$ORB$UNAUT
+HENTICATED','AURORA$JIS$UTILITY$','OPS$ORACLE','PATROL35','PRECISE','PRECISE_I3'
+,'PERFSTAT','SYSMAN','MGMT_VIEW','WMSYS','DIP','ORDSYS','ORDPLUGINS','MDSYS')
+order by name
+/
