@@ -3,14 +3,18 @@ from __future__ import print_function
 import os
 import argparse
 
-def main():
-
-   # Constants to replace
-   replace_jira = "JJJJJ"
-   replace_change_request = "CCCCC"
-
-
-   
-
 if __name__ == "__main__":
-   main()
+   
+   # {{{ Process arguments
+   ap = argparse.ArgumentParser()
+   ap.add_argument("jira", help="Jira Ticket")
+   ap.add_argument("cr", help="Change Request Number")
+   ap.add_argument("-v", "--verbose", help="be verbose", action="store_true")
+   args=ap.parse_args()
+   # }}}
+   
+   # {{{  Verbose
+   if args.verbose:
+      print("jira is %s" % args.jira)
+      print("Change Request is %s" % args.cr)
+   # }}}
