@@ -1,1 +1,1 @@
-mongo --port 27000
+mongo --port 27000 --quiet
