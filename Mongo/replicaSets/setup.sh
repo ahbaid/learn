@@ -36,10 +36,10 @@ nodes=$1
 sp=$2
 let i=0
 
-echo "cfg = { _id: "demo-$nodes", members:[" > gen-rs-config.js
+echo "cfg = { _id: "\"demo\"", members:[" > gen-rs-config.js
 
 seq $sp `expr $sp + $nodes - 1` | while read p; do
-   echo "{ _id : $i, host : "localhost:$p"}," >> gen-rs-config.js
+   echo "{ _id : $i, host : "\"localhost:$p\""}," >> gen-rs-config.js
    let i++
 done
 echo "] };" >> gen-rs-config.js
