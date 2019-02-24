@@ -8,9 +8,9 @@ Mongo Replica Set Helper Scripts
 
 # Scripts
 * setup.sh <nodes> <starting-port>
-** Creates a replica set with the number of nodes passed, starting with the starting-port and increment for as many nodes are needed
+	* Creates a replica set with the number of nodes passed, starting with the starting-port and increment for as many nodes are needed
 * teardown.sh
-** No intelligence, destroy data and log dirs, kill mongod processes indiscriminately
+	* No intelligence, destroy data and log dirs, kill mongod processes indiscriminately
 * master.sh
-** Connect to the first port node, assume it's master.
-** optional first argument if you have a specific port.
+	* Connect to the first port node, assume it's master.
+	* optional first argument if you have a specific port.
