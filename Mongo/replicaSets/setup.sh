@@ -9,6 +9,8 @@ function usage {
 }
 # }}}
 
+export rsname=ahbaid
+
 # {{{ prepare_nodes
 function prepare_nodes {
 nodes=$1
@@ -19,7 +21,7 @@ seq $sp `expr $sp + $nodes - 1` | while read p; do
    echo
    echo -n "Preparing Node: [$p]"
    mkdir -p data/db-$p 
-   mongod --replSet demo \
+   mongod --replSet $rsname-$nodes \
           --logpath ./logs/$p.log --logappend \
           --dbpath ./data/db-$p \
           --port $p \
@@ -36,7 +38,7 @@ nodes=$1
 sp=$2
 let i=0
 
-echo "cfg = { _id: "\"demo\"", members:[" > gen-rs-config.js
+echo "cfg = { _id: "\"$rsname-$nodes\"", members:[" > gen-rs-config.js
 
 seq $sp `expr $sp + $nodes - 1` | while read p; do
    echo "{ _id : $i, host : "\"localhost:$p\""}," >> gen-rs-config.js
