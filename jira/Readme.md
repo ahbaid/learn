@@ -1,5 +1,10 @@
 # JIRA Scripts
 
+# Pre-requisites
+~~~~
+pip install jira
+~~~~
+
 # Files:
 ## ~/.netrc
 * Holds your JIRA creds
