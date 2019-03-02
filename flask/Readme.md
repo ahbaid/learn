@@ -43,11 +43,12 @@ $ source dev1/bin/activate
 
 ## Setup heroku in dev1
 ~~~~
-(dev1) $ heroku login
-heroku: Press any key to open up the browser to login or q to exit: 
-Logging in... done
-Logged in as ahbaid@gmail.com
-
 $ heroku --version
 heroku/7.22.2 darwin-x64 node-v11.9.0
+
+$ heroku login -i
+heroku: Enter your login credentials
+Email [ahbaid@gmail.com]: 
+Password: ************
+Logged in as ahbaid@gmail.com
 ~~~~
