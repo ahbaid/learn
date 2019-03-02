@@ -2,6 +2,9 @@ FLASK
 
 # Pre-requisites:
 
+## Install Heroku's CLI
+* https://devcenter.heroku.com/articles/heroku-cli
+
 ## Install flask package for python use
 ~~~~
 pip install flask --user
