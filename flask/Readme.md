@@ -48,7 +48,7 @@ Installing collected packages: itsdangerous, MarkupSafe, Jinja2, Werkzeug, click
 Successfully installed Jinja2-2.10 MarkupSafe-1.1.1 Werkzeug-0.14.1 click-7.0 flask-1.0.2 itsdangerous-1.1.0
 ~~~~
 
-## Setup heroku
+## Setup heroku in dev1
 ~~~~
 (dev1) $ pip install heroku
 Collecting heroku
