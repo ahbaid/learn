@@ -4,6 +4,10 @@ FLASK
 
 ## Install Heroku's CLI
 * https://devcenter.heroku.com/articles/heroku-cli
+* OSX:
+~~~~
+$ brew tap heroku/brew && brew install heroku
+~~~~
 
 ## Install flask package for python use
 ~~~~
@@ -39,6 +43,9 @@ $ source dev1/bin/activate
 
 ## Setup heroku in dev1
 ~~~~
-(dev1) $ pip install heroku
-(dev1) $ pip install heroku_tools
+(dev1) $ 
+(dev1) $ heroku login
+heroku: Press any key to open up the browser to login or q to exit: 
+Logging in... done
+Logged in as ahbaid@gmail.com
 ~~~~
