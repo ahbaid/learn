@@ -140,6 +140,7 @@ web=1:Free
 ~~~~
 
 ## Visit the app
+* https://polar-chamber-59936.herokuapp.com/
 ~~~~
 (hkdev) $ heroku open
 ~~~~
