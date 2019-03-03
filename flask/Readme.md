@@ -61,6 +61,6 @@ Logged in as ahbaid@gmail.com
 (flask) $ pwd
 /Users/ahbaidg/work/flask
 (flask) $ mkdir -p static/css static/js static/image templates
-(flask) $ touch routes.py Readme.md
+(flask) $ touch router.py Readme.md
 ~~~~
 
