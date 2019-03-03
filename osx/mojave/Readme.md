@@ -8,7 +8,7 @@ OSX HowTo's, Issues & Solutions
 * Solution: "xcode-select --install"
 
 
-# HowTo's
+# OSX HowTo's
 
 ## Check OS version
 ~~~~
@@ -26,4 +26,26 @@ Software:
       Secure Virtual Memory: Enabled
       System Integrity Protection: Enabled
       Time since boot: 6 days 12:40
+~~~~
+
+## Hidden users:
+
+### Show hidden users
+~~~~
+sudo dscl . create /Users/bandit IsHidden 1
+~~~~
+
+### Hiding a user
+~~~~
+sudo dscl . create /Users/bandit IsHidden 1
+
+# Move the home directory to a non-standard Finder lcoation
+sudo mv /Users/bandit /var/bandit
+# Update the user record info
+sudo dscl . create /Users/bandit NFSHomeDirectory /var/bandit
+~~~~
+
+### Unhiding a user
+~~~~
+sudo dscl . create /Users/bandit IsHidden 0
 ~~~~
