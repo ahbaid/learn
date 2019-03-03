@@ -145,6 +145,36 @@ web=1:Free
 (hkdev) $ heroku open
 ~~~~
 
+## Check Process
+~~~~
+(hkdev) $ heroku ps
+Free dyno hours quota remaining this month: 550h 0m (100%)
+Free dyno usage for this app: 0h 0m (0%)
+For more information on dyno sleeping and how to upgrade, see:
+https://devcenter.heroku.com/articles/dyno-sleeping
+
+=== web (Free): gunicorn gettingstarted.wsgi --log-file - (1)
+web.1: up 2019/03/02 17:45:04 -0800 (~ 4m ago)
+~~~~
+
+## Scale Web Tier Dynos
+~~~~
+(hkdev) $ heroku ps
+Free dyno hours quota remaining this month: 550h 0m (100%)
+Free dyno usage for this app: 0h 0m (0%)
+For more information on dyno sleeping and how to upgrade, see:
+https://devcenter.heroku.com/articles/dyno-sleeping
+
+=== web (Free): gunicorn gettingstarted.wsgi --log-file - (1)
+web.1: up 2019/03/02 17:45:04 -0800 (~ 4m ago)
+
+(hkdev) $ heroku ps:scale web=2
+Scaling dynos... !
+ ▸    Cannot update to more than 1 Free size dynos per process type.
+(hkdev) $ heroku ps:scale web=0
+Scaling dynos... done, now running web at 0:Free
+~~~~
+
 ## Tail logs
 ~~~~
 (hkdev) $ heroku logs --tail
