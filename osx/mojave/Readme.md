@@ -32,7 +32,7 @@ Software:
 
 ### Show hidden users
 ~~~~
-sudo dscl . create /Users/bandit IsHidden 1
+sudo dscl . list /Users
 ~~~~
 
 ### Hiding a user
