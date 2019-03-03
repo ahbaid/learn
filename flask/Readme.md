@@ -177,3 +177,9 @@ To https://git.heroku.com/powerful-everglades-40830.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ~~~~
+
+## Open the app
+~~~~
+heroku open
+~~~~
+![powerful-everglades-40830](powerful-everglades-40830.png)
