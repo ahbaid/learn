@@ -1,6 +1,8 @@
 # Git config
+~~~~
 git config --global user.name "Ahbaid Gaffoor"
 git config --global user.email "ahbaid@gmail.com"
+~~~~
 
 # Init a local repository
 ~~~~
