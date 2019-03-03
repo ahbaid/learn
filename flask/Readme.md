@@ -19,29 +19,29 @@ pip install flask --user
 $ pip install virtualenv --user
 ~~~~
 
-* Create dev1 env 
+* Create flask env 
 ~~~~
-$ virtualenv dev1
-New python executable in /Users/ahbaidg/work/dev1/bin/python
+$ virtualenv flask
+New python executable in /Users/ahbaidg/work/flask/bin/python
 Installing setuptools, pip, wheel...
 done.
 ~~~~
 
-* Setup dev1 env 
+* Setup flask env 
 ~~~~
-$ source dev1/bin/activate
-(dev1) $ 
-(dev1) $ cd dev1/
-(dev1) $ pwd
-/Users/ahbaidg/work/dev1
-~~~~
-
-* Install flask in dev1 env
-~~~~
-(dev1) $ pip install flask
+$ source flask/bin/activate
+(flask) $ 
+(flask) $ cd flask/
+(flask) $ pwd
+/Users/ahbaidg/work/flask
 ~~~~
 
-## Setup heroku in dev1
+* Install flask in flask env
+~~~~
+(flask) $ pip install flask
+~~~~
+
+## Setup heroku in flask
 ~~~~
 $ heroku --version
 heroku/7.22.2 darwin-x64 node-v11.9.0
@@ -52,3 +52,12 @@ Email [ahbaid@gmail.com]:
 Password: ************
 Logged in as ahbaid@gmail.com
 ~~~~
+
+## Setup flask app 
+~~~~
+(flask) $ pwd
+/Users/ahbaidg/work/flask
+(flask) $ mkdir -p static/css static/js static/image templates
+(flask) $ touch routes.py Readme.md
+~~~~
+
