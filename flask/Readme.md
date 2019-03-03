@@ -179,6 +179,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 ~~~~
 
 ## Open the app
+* https://powerful-everglades-40830.herokuapp.com/
 ~~~~
 heroku open
 ~~~~
