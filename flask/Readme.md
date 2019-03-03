@@ -1,5 +1,8 @@
 FLASK 
 
+# Fetch Request Cycle
+![Fetch Request Cycle](flask.png)
+
 # Pre-requisites:
 
 ## Install Heroku's CLI
