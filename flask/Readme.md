@@ -217,7 +217,14 @@ insert into users(username, userpwdhash) values ('ahg','plaintext');
 (flask) $ pip install flask-sqlalchemy
 ~~~~
 
-## Instal Flask WTF for forms
+
+## Install Flask WTF for forms
 ~~~~
 (flask) $ pip install flask-wtf
+~~~~
+
+## Install psycopg2 for postgres use
+* http://initd.org/psycopg/
+~~~~
+(flask) $ pip install psycopg2
 ~~~~
