@@ -157,6 +157,27 @@ https://devcenter.heroku.com/articles/dyno-sleeping
 web.1: up 2019/03/02 17:45:04 -0800 (~ 4m ago)
 ~~~~
 
+## Show Apps Info
+~~~~
+(flask) $ heroku apps:info
+=== powerful-everglades-40830
+Auto Cert Mgmt: false
+Dynos:          web: 1
+Git URL:        https://git.heroku.com/powerful-everglades-40830.git
+Owner:          ahbaid@gmail.com
+Region:         us
+Repo Size:      558 KB
+Slug Size:      46 MB
+Stack:          heroku-18
+Web URL:        https://powerful-everglades-40830.herokuapp.com/
+(flask) $ heroku apps:stacks
+=== ⬢ powerful-everglades-40830 Available Stacks
+  cedar-14
+  container
+  heroku-16
+* heroku-18
+~~~~
+
 ## Scale Web Tier Dynos
 ~~~~
 (hkdev) $ heroku ps
