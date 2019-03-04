@@ -227,6 +227,7 @@ insert into users(username, userpwdhash) values ('ahg','plaintext');
 * http://initd.org/psycopg/
 ~~~~
 (flask) $ pip install psycopg2
+(flask) $ pip install psycopg2-binary
 ~~~~
 
 ## Connect to postgres and create a role for your OS user (ahbaidg in this case)
