@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from models import db
+from pg import db
 from forms import AddUserForm
 
 app = Flask(__name__)
