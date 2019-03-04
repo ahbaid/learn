@@ -228,3 +228,15 @@ insert into users(username, userpwdhash) values ('ahg','plaintext');
 ~~~~
 (flask) $ pip install psycopg2
 ~~~~
+
+## Connect to postgres and create a role for your OS user (ahbaidg in this case)
+~~~~
+postgres=# create role ahbaidg login superuser;
+CREATE ROLE
+postgres=# \du+
+                                          List of roles
+ Role name |                         Attributes                         | Member of | Description 
+-----------+------------------------------------------------------------+-----------+-------------
+ ahbaidg   | Superuser                                                  | {}        | 
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}        | 
+~~~~
