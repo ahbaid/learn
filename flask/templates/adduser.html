@@ -1,0 +1,30 @@
+{% extends "base_layout.html" %}
+{% block content %}
+      <main class="container signup-section">
+         <div class="section-content">
+            <h2>Add User</h2>
+            <form method="POST" action="/adduser">
+
+               {{ form.hidden_tag() }} 
+
+               <div class="form-group">
+                  {{ form.hidden_tag() }}
+               </div>
+
+               <div class="form-group">
+                  {{ form.username.label }}
+                  {{ form.username }}
+               </div>
+
+               <div class="form-group">
+                  {{ form.password.label }}
+                  {{ form.password }}
+               </div>
+
+               {{ form.submit(class="btn-primary") }}
+               <a href="{{ url_for('index') }}" class="btn-secondary">Home</a>
+
+            </form>
+         </div>
+      </main>
+{% endblock %}
