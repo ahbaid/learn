@@ -1,5 +1,8 @@
 FLASK 
 
+# Credits
+* https://github.com/lpolepeddi series on Lynda.com
+
 # Fetch Request Cycle
 ![Fetch Request Cycle](flask.png)
 
@@ -218,5 +221,3 @@ insert into users(username, userpwdhash) values ('ahg','plaintext');
 ~~~~
 (flask) $ pip install flask-wtf
 ~~~~
-# Credits
-* https://github.com/lpolepeddi series on Lynda.com
