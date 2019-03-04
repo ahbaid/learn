@@ -195,6 +195,23 @@ Type "help" for help.
 
 postgres=# create database travels;
 CREATE DATABASE
+
+\c flask
+
+create table if not exists users(
+   userid serial primary key,
+   username varchar(25) not null,
+   userpwdhash varchar(200) not null
+);
+
+insert into users(username, userpwdhash) values ('ahg','plaintext');
+~~~~
+
+## Install Flask sqlalchemy extension
+* http://flask.pocoo.org/extensions/
+* https://www.sqlalchemy.org/
+~~~~
+(flask) $ pip install flask-sqlalchemy
 ~~~~
 
 # Credits
