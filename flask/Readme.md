@@ -184,3 +184,18 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 heroku open
 ~~~~
 ![powerful-everglades-40830](powerful-everglades-40830.png)
+
+# Connecting "Hello Travels" to a database
+
+## Create travels database in Postgres
+~~~~
+$ psql
+psql (11.2)
+Type "help" for help.
+
+postgres=# create database travels;
+CREATE DATABASE
+~~~~
+
+# Credits
+* https://github.com/lpolepeddi series on Lynda.com
