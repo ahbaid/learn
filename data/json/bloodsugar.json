@@ -1,7 +1,7 @@
 {
  "readings": [
-   { "bg_value":150,"timestamp":"20150415T11:15:34", "meal":"before_meal"}, 
-   { "bg_value":90, "timestamp":"20150416T11:15:34"},
-   { "bg_value":250,"timestamp":"20150417iT11:15:34", "meal":"after_meal"} 
+   { "bloodsugar":150,"ts":"20181101T11:45:00", "when":"before_meal"}, 
+   { "bloodsugar":90, "ts":"20181102T13:00:00"},
+   { "bloodsugar":250,"ts":"20181103T13:30:00", "when":"after_meal"} 
  ]
 }
