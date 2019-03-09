@@ -1,0 +1,7 @@
+{
+ "readings": [
+   { "bg_value":150,"timestamp":"20150415T11:15:34", "meal":"before_meal"}, 
+   { "bg_value":90, "timestamp":"20150416T11:15:34"},
+   { "bg_value":250,"timestamp":"20150417iT11:15:34", "meal":"after_meal"} 
+ ]
+}
