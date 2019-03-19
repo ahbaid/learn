@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
 from pg import db, User
 from forms import AddUserForm
 
@@ -19,6 +19,10 @@ def index():
 def more():
    return render_template("more.html")
 
+@app.route("/home")
+def home():
+   return render_template("home.html")
+
 @app.route("/adduser", methods=['GET','POST'])
 def adduser():
    form = AddUserForm()
@@ -29,7 +33,11 @@ def adduser():
          newuser = User(form.username.data, form.password.data)
          db.session.add(newuser)
          db.session.commit()
-         return "Success!"
+
+         session['username'] = newuser.username
+         return redirect(url_for('home'))
+         #return "Success!"
+
    elif request.method == 'GET':
       return render_template("adduser.html", form=form)
 
