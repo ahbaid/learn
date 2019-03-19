@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-from pg import db, User
-from forms import AddUserForm, LoginForm
+from pg import db, User, Place
+from forms import AddUserForm, LoginForm, AddressForm
 
 app = Flask(__name__)
 
@@ -24,14 +24,45 @@ def more():
 # }}}
 
 # {{{ "/home"
-@app.route("/home")
+@app.route("/home", methods=['GET','POST'])
 def home():
-   return render_template("home.html")
+   if 'username' not in session:
+      return redirect(url_for('login'))
+   
+   form = AddressForm()
+
+   places = []
+   coords = (37.4221, -122.0844)
+
+   if request.method == 'POST':
+
+      if form.validate() == False:
+         return render_template("home.html",form=form)
+      else:
+         #pass
+         # get the address
+         address = form.address.data
+
+         # query for places around it using 
+         p = Place()
+         coords = p.address_to_latlng(address)
+         places = p.query(address)
+
+         # return the results
+         return render_template('home.html', form=form, coords=coords, places=places)
+
+   elif request.method == 'GET': 
+      return render_template("home.html", form=form, coords=coords, places=places)
+
 # }}}
 
 # {{{ "/adduser"
 @app.route("/adduser", methods=['GET','POST'])
 def adduser():
+
+   if 'username' in session:
+      return redirect(url_for('home'))
+
    form = AddUserForm()
    if request.method == 'POST':
       if form.validate() == False:
@@ -52,6 +83,10 @@ def adduser():
 # {{{ "/login"
 @app.route("/login", methods=['GET','POST'])
 def login():
+
+   if 'username' in session:
+      return redirect(url_for('home'))
+
    form = LoginForm()
    if request.method == 'POST':
       if form.validate() == False:
@@ -69,6 +104,13 @@ def login():
 
    elif request.method == 'GET':
       return render_template("login.html", form=form)
+# }}}
+
+# {{{ "/logout"
+@app.route("/logout", methods=['GET','POST'])
+def logout():
+   session.pop('username',None)
+   return redirect(url_for('login'))
 # }}}
 
 if __name__ == "__main__":

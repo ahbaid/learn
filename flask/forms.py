@@ -19,6 +19,10 @@ class AddUserForm(FlaskForm):
    submit = SubmitField('Add User')
 
 class LoginForm(FlaskForm):
-   username = StringField('Username', [DataRequired(message="Please enter yout username.")])
+   username = StringField('Username', [DataRequired(message="Please enter your username.")])
    password = PasswordField('Password', [DataRequired("Please enter your password."), Length(min=8, message="Must be 8 characters!")])
    submit = SubmitField('Login')
+
+class AddressForm(FlaskForm):
+   address = StringField('Address', [DataRequired(message="Please enter an address.")])
+   submit = SubmitField('Search')
