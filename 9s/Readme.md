@@ -1,6 +1,6 @@
 # Nines
 
-# Reference: https://en.wikipedia.org/wiki/High_availability#Percentage_calculation
+* Reference: https://en.wikipedia.org/wiki/High_availability#Percentage_calculation
 
 
 | 9's | Desc | Year | Month | Week | Day |
