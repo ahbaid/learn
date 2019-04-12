@@ -1,6 +1,6 @@
 # Kids Code Camp
 
-## Introduction:
+## A Recipe:
 
 Let's cook a meal. First we need to decide what we want to cook.
 Let's cook chicken curry. First we need the ingredients, then we choose
