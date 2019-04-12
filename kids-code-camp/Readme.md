@@ -1,5 +1,23 @@
 # Kids Code Camp
 
+## Welcome!
+Humans understand recipes. We read a recipe, we interpret it, then we execute it 
+to producce a meal. If a recipe is written in english, we need a human that understands
+english.
+
+Computers also understand recipes, we write these recipes in specific languages that
+computers understand. These recipes are called programs. For a computer to interpret a 
+program we need to run that program with an interpreter that understands the programs
+language. 
+
+Programs written in Python are run using the Pythomn interpreter. We will be coding
+Python. What is coding? That's what we are here to learn!
+
+Take a look at the sample starter program "hello.py" , run it using Python (version 3).
+See if you can understand what it does!
+
+Let's go code!
+
 ## A Recipe:
 
 Let's cook a meal. First we need to decide what we want to cook.
