@@ -10,3 +10,18 @@
 * O(n) - n 
 * O(log n) - log n 
 * O(1) - 1 
+
+### Sort Algorithms:
+
+## Quick
+## Merge
+## Tim
+## Heap
+## Bubble
+## Insertion
+## Selection
+## Tree
+## Shell
+## Bucket
+##
+
