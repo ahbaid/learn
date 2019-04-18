@@ -5,4 +5,9 @@ Three Pillars of observability:
 - Metrics
 - Tracing
 - Logging
-Venn diagram
+Venn diagram intersections
+
+## Lab Settings
+
+
+## Ingestion - acquiring, enriching & transforming data
