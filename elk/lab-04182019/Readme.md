@@ -20,3 +20,5 @@ Venn diagram intersections
     - lightweight data shippers
     - written in go, no jvm overhead
     - 70+ community beats
+* Tutorials on elastic.co
+* Demo at http://demo.elastic.co
