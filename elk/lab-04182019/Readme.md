@@ -22,3 +22,30 @@ Venn diagram intersections
     - 70+ community beats
 * Tutorials on elastic.co
 * Demo at http://demo.elastic.co
+* Logstash:
+    - Ingest
+    - Parse
+    - Transform
+    - Secure & encrypt inputs
+    - Pipelines: input + filter + output
+
+## Capturing & Visualizing Metrics & Logs
+* Ingest multiple logs files and metrics into an Elastic stack.
+* Download and install:
+    - MetricBeat: https://www.elastic.co/downloads/beats/metricbeat 
+    - Filebeat: https://www.elastic.co/downloads/beats/filebeat
+
+## Metricbeat:
+* Edit metricbeat.yml
+    - cloud.id
+    - cloud.auth
+* list modules
+~~~~bash
+$ ./metricbeat modules list
+Enabled:
+system
+
+Disabled:
+aerospike
+apache
+~~~~
