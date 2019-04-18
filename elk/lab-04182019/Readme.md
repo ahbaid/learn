@@ -69,3 +69,33 @@ ahbaidg@safa:~/github/learn/elk/lab-04182019/downloads/metricbeat-7.0.0-linux-x8
 ahbaidg@safa:~/github/learn/elk/lab-04182019/downloads/metricbeat-7.0.0-linux-x86_64$ ls -alrth metricbeat.log
 -rw-rw-r-- 1 ahbaidg ahbaidg 7.3K Apr 18 11:58 metricbeat.log
 ~~~~
+
+## Filebeat:
+* list modules
+~~~~bash
+ahbaidg@safa:~/github/learn/elk/lab-04182019/downloads/filebeat-7.0.0-linux-x86_64$ ./filebeat modules list
+Enabled:
+
+Disabled:
+apache
+auditd
+elasticsearch
+haproxy
+icinga
+iis
+iptables
+kafka
+kibana
+logstash
+mongodb
+mysql
+nginx
+osquery
+postgresql
+redis
+santa
+suricata
+system
+traefik
+zeek
+~~~~
