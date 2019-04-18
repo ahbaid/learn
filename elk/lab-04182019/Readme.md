@@ -49,3 +49,14 @@ Disabled:
 aerospike
 apache
 ~~~~
+* setup system
+~~~~bash
+$ ./metricbeat -e setup system
+....
+Index setup complete.
+Loading dashboards (Kibana must be running and reachable)
+2019-04-18T11:55:28.878-0700    INFO    kibana/client.go:118    Kibana url: https://5d26e144bafb4c3cb4c082324b451909.us-west-1.aws.found.io:443
+2019-04-18T11:55:29.280-0700    INFO    kibana/client.go:118    Kibana url: https://5d26e144bafb4c3cb4c082324b451909.us-west-1.aws.found.io:443
+2019-04-18T11:55:59.752-0700    INFO    instance/beat.go:741    Kibana dashboards successfully loaded.
+Loaded dashboards
+~~~~
