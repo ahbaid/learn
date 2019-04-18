@@ -60,3 +60,12 @@ Loading dashboards (Kibana must be running and reachable)
 2019-04-18T11:55:59.752-0700    INFO    instance/beat.go:741    Kibana dashboards successfully loaded.
 Loaded dashboards
 ~~~~
+* run the agent
+~~~~bash
+ahbaidg@safa:~/github/learn/elk/lab-04182019/downloads/metricbeat-7.0.0-linux-x86_64$ nohup ./metricbeat -e 1>>metricbeat.log 2>&1 &
+[1] 20736
+ahbaidg@safa:~/github/learn/elk/lab-04182019/downloads/metricbeat-7.0.0-linux-x86_64$ jobs
+[1]+  Running                 nohup ./metricbeat -e >> metricbeat.log 2>&1 &
+ahbaidg@safa:~/github/learn/elk/lab-04182019/downloads/metricbeat-7.0.0-linux-x86_64$ ls -alrth metricbeat.log
+-rw-rw-r-- 1 ahbaidg ahbaidg 7.3K Apr 18 11:58 metricbeat.log
+~~~~
