@@ -52,7 +52,7 @@ p_mw_wkdays = re.compile(re_mw_wkdays)
 
 # {{{ Holiday checker
 def holiday(dstr):
-   re_holidays = '^.*09/05/2019.*'
+   re_holidays = '^.*09/02/2019.*'
    p_holidays = re.compile(re_holidays)
    return p_holidays.search(dstr)
 # }}}
