@@ -3,7 +3,7 @@ import re
 
 # {{{ Start and end dates (inclusive)
 dstart = dt.datetime(2019, 8, 1)
-dend = dt.datetime(2019, 8, 30)
+dend = dt.datetime(2019, 8, 10)
 # }}}
 
 # Iteration step - 1 day
@@ -29,6 +29,8 @@ re_maintenance_windows_weekday = '^.*Tue|Thu.*'
 
 
 d = dstart
+# {{{ Generate Calendars
+
 while d <= dend:
 
    # Reformat date string to expost Day full name
@@ -37,29 +39,35 @@ while d <= dend:
    # Capture all days
    dcal_all.append(datestr)
 
-   # Capture all weekends
-   if p_weekends.search(datestr):
-      dcal_weekends.append(datestr)
+   # Capture weekends
+   if p_weekends.search(datestr): dcal_weekends.append(datestr)
 
-   # Capture all weekdays
-   if p_weekdays.search(datestr):
-      dcal_weekdays.append(datestr)
+   # Capture weekdays
+   if p_weekdays.search(datestr): dcal_weekdays.append(datestr)
 
    # Iterate to next day
    d += daily
 
-# Calendar of days
+# }}}
+
+# {{{ Print Calendars
+
+# {{{ Calendar of days
 print('All Days\n================================')
 for day in dcal_all: print(day)
 print("\n")
+# }}}
 
-# Calendar of weekends
+# {{{ Calendar of weekends
 print('Weekends\n================================')
 for day in dcal_weekends: print(day)
 print("\n")
+# }}}
 
-
-# Calendar of weekdays
+# {{{ Calendar of weekdays
 print('Weekdays\n================================')
 for day in dcal_weekdays: print(day)
 print("\n")
+# }}}
+
+# }}}
