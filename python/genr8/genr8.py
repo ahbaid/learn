@@ -14,10 +14,8 @@ dend = dt.datetime(2019, 9, 30)
 
 # {{{ Prepare Calendar Lists, Regular expression strings and parsers
 
-# {{{ Full calendar, holiday exclusions
+# {{{ Full calendar
 dcal_all = []
-re_holidays = '^.*09/05/2019.*'
-p_holidays = re.compile(re_holidays)
 # }}}
 
 # {{{ All Weekends
@@ -52,6 +50,13 @@ p_mw_wkdays = re.compile(re_mw_wkdays)
 
 # }}}
 
+# {{{ Holiday checker
+def holiday(dstr):
+   re_holidays = '^.*09/05/2019.*'
+   p_holidays = re.compile(re_holidays)
+   return p_holidays.search(dstr)
+# }}}
+
 # {{{ Generate Calendars
 
 d = dstart
@@ -66,7 +71,10 @@ while d <= dend:
    datestr = d.strftime('%m/%d/%Y %c')
    
    # Capture all days
-   dcal_all.append(datestr)
+   if holiday(datestr):
+      dcal_all.append(datestr+' [HOLIDAY] Labor Day')
+   else:
+      dcal_all.append(datestr)
 
    # Capture Weekends
    if p_wkends.search(datestr): dcal_wkends.append(datestr)
