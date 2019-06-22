@@ -64,23 +64,28 @@ d = dstart
 # Iteration step - 1 day
 daily = dt.timedelta(days=1)
 
-
 while d <= dend:
 
    # Reformat date string to expose Day full name (08/01/2019 Thu Aug  1 00:00:00 2019)
    datestr = d.strftime('%m/%d/%Y %c')
    
-   # Capture all days
+   # {{{ Capture all days
    if holiday(datestr):
       dcal_all.append(datestr+' [HOLIDAY] Labor Day')
    else:
       dcal_all.append(datestr)
+   # }}}
 
    # Capture Weekends
    if p_wkends.search(datestr): dcal_wkends.append(datestr)
 
-   # Capture Weekdays
-   if p_wkdays.search(datestr): dcal_wkdays.append(datestr)
+   # {{{ Capture Weekdays
+   if p_wkdays.search(datestr): 
+      if holiday(datestr):
+         dcal_wkdays.append(datestr+' [HOLIDAY] Labor Day')
+      else:
+         dcal_wkdays.append(datestr)
+   # }}}
 
    # Capture all Maintenance Windows
    if p_mw_all.search(datestr): dcal_mw_all.append(datestr)
@@ -88,8 +93,13 @@ while d <= dend:
    # Capture all Maintenance Weekends
    if p_mw_wkends.search(datestr): dcal_mw_wkends.append(datestr)
 
-   # Capture all Maintenance Weekdays
-   if p_mw_wkdays.search(datestr): dcal_mw_wkdays.append(datestr)
+   # {{{ Capture all Maintenance Weekdays
+   if p_mw_wkdays.search(datestr): 
+      if holiday(datestr):
+         dcal_mw_wkdays.append(datestr+' [HOLIDAY] Labor Day')
+      else:
+         dcal_mw_wkdays.append(datestr)
+   # }}}
 
    # Iterate to next day
    d += daily
