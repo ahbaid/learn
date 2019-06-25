@@ -12,7 +12,7 @@ dend = dt.datetime(2019, 9, 30)
 
 # }}}
 
-# {{{ Prepare Calendar Lists, Regular expression strings and parsers
+# {{{ Initialize Calendar Lists, Regular expression strings and parsers
 
 # {{{ Full calendar
 dcal_all = []
@@ -67,7 +67,10 @@ daily = dt.timedelta(days=1)
 while d <= dend:
 
    # Reformat date string to expose Day full name (08/01/2019 Thu Aug  1 00:00:00 2019)
+   rawdate = d.strftime('%m/%d/%Y')
    datestr = d.strftime('%m/%d/%Y %c')
+
+   # Holiday details
    
    # {{{ Capture all days
    if holiday(datestr):
