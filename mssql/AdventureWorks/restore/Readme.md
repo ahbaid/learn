@@ -168,3 +168,47 @@ database_id name physical_database_name compatibility_level state state_desc
 
 (5 rows affected)
 ~~~~
+
+## Set compatibility level to 2019 - 150
+~~~~
+1> alter database AdventureWorks set compatibility_level = 150;
+2> go
+~~~~
+
+## Validate
+~~~~
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ sqlsc -i /home/ahbaidg/github/learn/mssql/compatibility-settings.sql
+set nocount on
+use master
+
+Changed database context to 'master'.
+
+select name, compatibility_level, compatibility_setting =
+case cast(compatibility_level as varchar)
+   when '150' then 'SQL Server 2019 supports 150,140,130,120,110,100'
+   when '140' then 'SQL Server 2017 supports 140,130,120,110,100'
+   when '130' then 'SQL Server 2016 supports 130,120,110,100'
+   when '120' then 'SQL Server 2014 supports 120,110,100'
+   when '110' then 'SQL Server 2012 supports 110,100,90'
+   when '100' then 'SQL Server 2008 supports 100,90,80'
+   when '90'  then 'SQL Server 2005 supports 90,80'
+   when '80'  then 'SQL Server 2000 supports 80'
+   else cast(compatibility_level as varchar)
+end
+from sys.databases;
+
+name
+         compatibility_level compatibility_setting
+------------------------------------------------------------------------------------------------------------------------
+-------- ------------------- ------------------------------------------------
+master
+                         150 SQL Server 2019 supports 150,140,130,120,110,100
+tempdb
+                         150 SQL Server 2019 supports 150,140,130,120,110,100
+model
+                         150 SQL Server 2019 supports 150,140,130,120,110,100
+msdb
+                         150 SQL Server 2019 supports 150,140,130,120,110,100
+AdventureWorks
+                         150 SQL Server 2019 supports 150,140,130,120,110,100
+~~~~
