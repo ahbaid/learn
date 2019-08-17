@@ -66,3 +66,24 @@ log mssqlsystemresource.ldf
 
 (13 rows affected)
 ~~~~
+
+## Check filelist on the backup
+~~~~
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ scsql -i restore_AdventureWorks_filelistonly.sql
+restore filelistonly from disk = '/tmp/AdventureWorks2017.bak' ;
+
+LogicalName PhysicalName Type FileGroupName Size MaxSize FileId CreateLSN DropLSN UniqueId ReadOnlyLSN ReadWriteLSN Back
+upSizeInBytes SourceBlockSize FileGroupId LogGroupGUID DifferentialBaseLSN DifferentialBaseGUID IsReadOnly IsPresent TDE
+Thumbprint SnapshotUrl
+----------- ------------ ---- ------------- ---- ------- ------ --------- ------- -------- ----------- ------------ ----
+------------- --------------- ----------- ------------ ------------------- -------------------- ---------- --------- ---
+---------- -----------
+AdventureWorks2017 C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQL2017RTM\MSSQL\DATA\AdventureWorks2017.mdf D PRIMAR
+Y 276824064 35184372080640 1 0 0 733940A8-D019-4DC5-80F8-13E869A504EC 0 0 215285760 512 1 NULL 0 00000000-0000-0000-0000
+-000000000000 0 1 NULL NULL
+AdventureWorks2017_log C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQL2017RTM\MSSQL\DATA\AdventureWorks2017_log.ldf
+L NULL 75497472 2199023255552 2 0 0 B166C891-E43F-42DA-87FC-8D7F34022B35 0 0 0 512 0 NULL 0 00000000-0000-0000-0000-0000
+00000000 0 1 NULL NULL
+
+(2 rows affected)
+~~~~
