@@ -132,3 +132,19 @@ Database 'AdventureWorks' running the upgrade step from version 902 to version 9
 Database 'AdventureWorks' running the upgrade step from version 903 to version 904.
 RESTORE DATABASE successfully processed 26283 pages in 2.458 seconds (83.535 MB/sec).
 ~~~~
+
+## Database has been restored
+~~~~
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ scsql -i /home/ahbaidg/github/learn/mssql/databases.sql
+select database_id, name, physical_database_name, compatibility_level, state, state_desc from sys.databases;
+
+database_id name physical_database_name compatibility_level state state_desc
+----------- ---- ---------------------- ------------------- ----- ----------
+1 master master 150 0 ONLINE
+2 tempdb tempdb 150 0 ONLINE
+3 model model 150 0 ONLINE
+4 msdb msdb 150 0 ONLINE
+5 AdventureWorks AdventureWorks 140 0 ONLINE
+
+(5 rows affected)
+~~~~
