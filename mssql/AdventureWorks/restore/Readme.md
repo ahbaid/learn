@@ -1,4 +1,4 @@
-FLASK 
+SQL Server Restoration
 
 # Links
 * https://docs.microsoft.com/en-us/sql/relational-databases/databases/attach-a-database?view=sql-server-2017
@@ -9,7 +9,7 @@ FLASK
 
 # Pre-requisites:
 * Download the backup file and put it in a lcoation on the db server, (example: /tmp/AdventureWorks.bak)
-* The restore command expects the file to be physicall on the server
+* The restore command expects the file to be in a physical path on the server locally
 
 # Restoration
 ## Check the headers
