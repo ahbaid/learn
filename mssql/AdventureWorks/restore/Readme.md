@@ -43,3 +43,26 @@ L
 (1 rows affected)
 ~~~~
 
+## Check files on the server
+~~~~
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ sqlsc -i listfiles.sql
+select name, filename from sys.sysaltfiles;
+
+name filename
+---- --------
+master /var/opt/mssql/data/master.mdf
+mastlog /var/opt/mssql/data/mastlog.ldf
+tempdev /var/opt/mssql/data/tempdb.mdf
+templog /var/opt/mssql/data/templog.ldf
+tempdev2 /var/opt/mssql/data/tempdb2.ndf
+tempdev3 /var/opt/mssql/data/tempdb3.ndf
+tempdev4 /var/opt/mssql/data/tempdb4.ndf
+modeldev /var/opt/mssql/data/model.mdf
+modellog /var/opt/mssql/data/modellog.ldf
+MSDBData /var/opt/mssql/data/MSDBData.mdf
+MSDBLog /var/opt/mssql/data/MSDBLog.ldf
+data mssqlsystemresource.mdf
+log mssqlsystemresource.ldf
+
+(13 rows affected)
+~~~~
