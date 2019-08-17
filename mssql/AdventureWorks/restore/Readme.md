@@ -87,3 +87,48 @@ L NULL 75497472 2199023255552 2 0 0 B166C891-E43F-42DA-87FC-8D7F34022B35 0 0 0 5
 
 (2 rows affected)
 ~~~~
+
+## Run the restore, note the use of the logical not physical file names in the command
+~~~~
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ scsql -i restore_AdventureWorks_full.sql
+restore database AdventureWorks from disk = '/tmp/AdventureWorks2017.bak'
+with recovery,
+move 'AdventureWorks2017' to '/var/opt/mssql/data/adventureworks.mdf',
+move 'AdventureWorks2017_log' to '/var/opt/mssql/data/adventureworks.ldf'
+;
+
+Processed 26280 pages for database 'AdventureWorks', file 'AdventureWorks2017' on file 1.
+Processed 3 pages for database 'AdventureWorks', file 'AdventureWorks2017_log' on file 1.
+Converting database 'AdventureWorks' from version 869 to the current version 904.
+Database 'AdventureWorks' running the upgrade step from version 869 to version 875.
+Database 'AdventureWorks' running the upgrade step from version 875 to version 876.
+Database 'AdventureWorks' running the upgrade step from version 876 to version 877.
+Database 'AdventureWorks' running the upgrade step from version 877 to version 878.
+Database 'AdventureWorks' running the upgrade step from version 878 to version 879.
+Database 'AdventureWorks' running the upgrade step from version 879 to version 880.
+Database 'AdventureWorks' running the upgrade step from version 880 to version 881.
+Database 'AdventureWorks' running the upgrade step from version 881 to version 882.
+Database 'AdventureWorks' running the upgrade step from version 882 to version 883.
+Database 'AdventureWorks' running the upgrade step from version 883 to version 884.
+Database 'AdventureWorks' running the upgrade step from version 884 to version 885.
+Database 'AdventureWorks' running the upgrade step from version 885 to version 886.
+Database 'AdventureWorks' running the upgrade step from version 886 to version 887.
+Database 'AdventureWorks' running the upgrade step from version 887 to version 888.
+Database 'AdventureWorks' running the upgrade step from version 888 to version 889.
+Database 'AdventureWorks' running the upgrade step from version 889 to version 890.
+Database 'AdventureWorks' running the upgrade step from version 890 to version 891.
+Database 'AdventureWorks' running the upgrade step from version 891 to version 892.
+Database 'AdventureWorks' running the upgrade step from version 892 to version 893.
+Database 'AdventureWorks' running the upgrade step from version 893 to version 894.
+Database 'AdventureWorks' running the upgrade step from version 894 to version 895.
+Database 'AdventureWorks' running the upgrade step from version 895 to version 896.
+Database 'AdventureWorks' running the upgrade step from version 896 to version 897.
+Database 'AdventureWorks' running the upgrade step from version 897 to version 898.
+Database 'AdventureWorks' running the upgrade step from version 898 to version 899.
+Database 'AdventureWorks' running the upgrade step from version 899 to version 900.
+Database 'AdventureWorks' running the upgrade step from version 900 to version 901.
+Database 'AdventureWorks' running the upgrade step from version 901 to version 902.
+Database 'AdventureWorks' running the upgrade step from version 902 to version 903.
+Database 'AdventureWorks' running the upgrade step from version 903 to version 904.
+RESTORE DATABASE successfully processed 26283 pages in 2.458 seconds (83.535 MB/sec).
+~~~~
