@@ -10,6 +10,20 @@ SQL Server Restoration
 # Pre-requisites:
 * Download the backup file and put it in a lcoation on the db server, (example: /tmp/AdventureWorks.bak)
 * The restore command expects the file to be in a physical path on the server locally
+* Source the ".env.sh" script to get the "scsql" alias setup
+* Uncomment the first line and set your "sa" password
+~~~~
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ cat env.sh
+# export MKPLAB=your_sa_password
+export SQLOPTS="-w 120 -W -e"
+alias sqlsc='sqlcmd -S 199.1.1.21 -U sa  -P "$MKPLAB" $SQLOPTS'
+alias sqlti='sqlcmd -S 199.1.1.22 -U sa  -P "$MKPLAB" $SQLOPTS'
+
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ source env.sh
+
+ahbaidg@safa:~/github/learn/mssql/AdventureWorks/restore$ alias scsql
+alias scsql='sqlcmd -S 199.1.1.21 -U "$MU" -P "$MK" -w 120 -W -e'
+~~~~
 
 # Restoration
 ## Check the headers
