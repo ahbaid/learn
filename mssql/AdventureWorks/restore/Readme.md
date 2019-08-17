@@ -14,7 +14,7 @@
 
 # Pre-requisites:
 * Download the backup file and put it in a lcoation on the db server, (example: /tmp/AdventureWorks.bak)
-* The restore command expects the file to be in a physical path on the server locally
+* The restore command expects the backup file to be in a physical path on the target database server locally
 * Source the ".env.sh" script to get the "scsql" alias setup
 * Uncomment the first line and set your "sa" password
 ~~~~
