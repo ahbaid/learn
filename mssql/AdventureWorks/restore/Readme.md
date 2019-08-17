@@ -1,4 +1,9 @@
-SQL Server Restoration
+# SQL Server Restoration of Microsoft's AdventureWorks database to SQL Server 2019 on Linux
+## Problem Statement
+* While needing a test database for load testing, Microsoft's AdventureWorks db is a good place to start.
+* Instructions are available online at: https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017
+* However these are geared to Windows.
+* This article shows the steps taken to download and restore the SQl Server 2017 version of the AdventureWorks database to SQL Server 2019 (or 2017) on Linux
 
 # Links
 * https://docs.microsoft.com/en-us/sql/relational-databases/databases/attach-a-database?view=sql-server-2017
