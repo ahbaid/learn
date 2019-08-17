@@ -11,6 +11,7 @@
 * https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks
 * https://docs.microsoft.com/en-us/sql/t-sql/statements/restore-statements-transact-sql?view=sql-server-2017#restoring_db_n_move_files
 * https://docs.microsoft.com/en-us/sql/t-sql/statements/restore-statements-headeronly-transact-sql?view=sql-server-2017
+* https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017
 
 # Pre-requisites:
 * Download the backup file and put it in a lcoation on the db server, (example: /tmp/AdventureWorks.bak)
