@@ -32,7 +32,7 @@ inoremap <tab> <c-r>=InsertTabWrapper ("backward")<cr>
 " {{{ Tag Completion
 set complete=.,w,b,u,t,i,k
 set dictionary=~/dictionaries/default.dic,~/dictionaries/oracle_keywords.dic
-set tags=~/dictionaries/total_desktop
+set tags=~/dictionaries/ahbaid.tags
 " }}}
 
 " {{{ Folding
