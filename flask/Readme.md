@@ -230,6 +230,12 @@ insert into users(username, userpwdhash) values ('ahg','plaintext');
 (flask) $ pip install psycopg2-binary
 ~~~~
 
+## Install geocoder for address search
+* https://github.com/DenisCarriere/geocoder
+~~~~
+(flask) $ pip install geocoder
+~~~~
+
 ## Connect to postgres and create a role for your OS user (ahbaidg in this case)
 ~~~~
 postgres=# create role ahbaidg login superuser;

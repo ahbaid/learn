@@ -5,6 +5,10 @@ set noautoindent
 set nowrap
 set syntax=plsql
 set tabstop=3
+set laststatus=2
+set statusline=%F:%y:(%l,%c)
+highlight CursorLine ctermbg=lightgray
+highlight CursorColumn ctermbg=lightgray
 
 " {{{ Tab Completion
 "
@@ -27,8 +31,8 @@ inoremap <tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
 " {{{ Tag Completion
 set complete=.,w,b,u,t,i,k
-set dictionary=~/dictionaries/postgres.dic
-set tags=~/dictionaries/vim-tags.txt
+set dictionary=~/dictionaries/default.dic,~/dictionaries/oracle_keywords.dic
+set tags=~/dictionaries/ahbaid.tags
 " }}}
 
 " {{{ Folding
@@ -59,18 +63,18 @@ if has("folding")
 endif
 " }}}
 
-" {{{ Functions for SQL scripts
+" {{{ Functions for Oracle SQL scripts
 
-" {{{ function SQLSpool()
-function SQLSpool()
+" {{{ function OracleSQLSpool()
+function OracleSQLSpool()
    let @n="spool ".expand('%:t:r')."\n\n"
    put! n
 endfunction
 command! -nargs=0 SQLPromptSpool call SQLSpool()
 " }}}
 
-" {{{ function SQLConnect()
-function SQLConnect()
+" {{{ function OracleSQLConnect()
+function OracleSQLConnect()
    let schema=toupper(input("Connect to schema: "))
    let @n="PROMPT\n"
    let @n=@n."PROMPT Enter Password and TNS Connect String for ".schema."....\n"
@@ -81,8 +85,8 @@ endfunction
 command! -nargs=0 SQLPromptConnect call SQLConnect()
 " }}}
 
-" {{{ function SQLContinue()
-function SQLContinue()
+" {{{ function OracleSQLContinue()
+function OracleSQLContinue()
    let mesg=input("Enter additional message: ")
    let @p="\nACCEPT continue PROMPT \"If there were errors, hit CTRL-C now ".mesg."....\"\n\n"
    put! p
@@ -90,8 +94,8 @@ endfunction
 command! -nargs=0 SQLPromptContinue call SQLContinue()
 " }}}
 
-" {{{ function SQLHeader()
-function SQLHeader()
+" {{{ function OracleSQLHeader()
+function OracleSQLHeader()
    let @d="-- Author:\t\tAhbaid Gaffoor\n"
    let @d=@d."-- File:\t\t".expand('%')."\n"
 "   let @d=@d."-- Date:\t\t".strftime("%c")."\n"
@@ -104,8 +108,8 @@ endfunction
 command! -nargs=0 SQLPromptHeader call SQLHeader()
 " }}}
 
-" {{{ function SQLPackage()
-function SQLPackage()
+" {{{ function OracleSQLPackage()
+function OracleSQLPackage()
    let package=toupper(input("Enter Package Name: "))
    let @d="-- {{{ Package Specification\n"
    let @d=@d."create or replace package ".package." as\n\n"
@@ -124,8 +128,8 @@ endfunction
 command! -nargs=0 SQLPackageHeader call SQLPackage()
 " }}}
 
-" {{{ function SQLProcedure()
-function SQLProcedure()
+" {{{ function OracleSQLProcedure()
+function OracleSQLProcedure()
    let procedure=input("Enter Procedure Name: ")
    let @d="-- {{{ procedure ".procedure."\n"
    let @d=@d."procedure ".procedure." is\n"
@@ -157,17 +161,13 @@ command! -nargs=0 PHPfunctionHeader call PHPfunction()
 " }}}
 
 " {{{ Key Mappings
+map   <F2>    :OracleSQLProcedureHeader<CR>
+map   <F3>    :OracleSQLPackageHeader<CR>
+map   <F6>    :set cursorline!<CR>
+map   <F7>    :set cursorcolumn!<CR>
+map   <F8>    :set number!<CR>
 map   <F10>   :bdel<CR>
 map   <F11>   :bp!<CR>
 map   <F12>   :bn!<CR>
-map   <F8>    :set number!<CR>
-
-map   <F2>    :SQLProcedureHeader<CR>
-map   <F3>    :SQLPackageHeader<CR>
-map   <F4>    :SQLPromptHeader<CR>
-map   <F5>    :SQLPromptSpool<CR>
-map   <F6>    :SQLPromptConnect<CR>
-map   <F7>    :SQLPromptContinue<CR>
-
-map   <F9>    :PHPfunctionHeader<CR>
 " }}}
+
