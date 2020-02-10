@@ -6,3 +6,4 @@ clean:
 	rm hello; ls -alh
 
 all: hello
+	./hello
