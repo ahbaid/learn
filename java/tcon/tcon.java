@@ -1,80 +1,69 @@
-/* 6.22
- * Temperature Conversion
- * Muhammad Gaffoor
- */
-//package chapter6hw;
 import java.util.Scanner;
 public class tcon
 {
    
-    public static double celcius (double f)
+    public static double f2c (double f)
     {
-      double cfinal;
-        cfinal = 5.0 / 9.0 * (f - 32);
-        return cfinal;
+       return (5.0 / 9.0 * (f - 32));
     }
    
-    public static double farenheit (double c)
+    public static double c2f (double c)
     {
-        double ffinal;
-        ffinal = 9.0 / 5.0 * c + 32;
-        return ffinal;
-       
+       return (9.0 / 5.0 * c + 32);
+    }
+
+    public static int get_selection()
+    {
+       System.out.print("\n========================================\n");
+       System.out.print("1. Farenheit to Celcius conversion\n");
+       System.out.print("2. Celcius to Farenheit conversion\n");
+       System.out.print("3. Quit\n");
+       System.out.print("========================================\n");
+       System.out.print("Selection: ");
+       Scanner input = new Scanner (System.in);
+       return input.nextInt();
     }
  
     public static void main(String args[])
     {
-        int z;
-        double c = 0;
-        double f =0;
-        double cfinal;
-        System.out.print("1. Farenheit to Celcius conversion\n");
-        System.out.print("2. Celcius to Farenheit conversion\n");
-        System.out.print("3. Quit\n");
-        Scanner input = new Scanner (System.in);
-        z = input.nextInt();
+
+        int z = get_selection();
        
-        while (z!=3)
+        while (z==1 || z==2)
         {
             switch (z)
             {
                 case 1:
                 {
-                    System.out.print("Enter a farenheit temperature you want in "
-                            + "celcius\n");
-                    f = input.nextDouble();
-                     cfinal = celcius(f);
-                     System.out.printf("The celcius value of the "
-                             + "farenheit temperature is %.2f\n", cfinal);
-               
-                    break;
+                   System.out.print("\nEnter fahrenheit temperature: ");
+                   Scanner input = new Scanner (System.in);
+                   double temp_in  = input.nextDouble();
+                   double temp_out = f2c(temp_in);
+                   System.out.printf("The celsius value of the fahrenheit %.2f temperature is %.2f\n", temp_in, temp_out);
+                   break;
                 }
                
                 case 2:
                 {
-                    System.out.print("Enter a celcius temperature you want in "
-                            + "farenheit\n");
-                    c = input.nextDouble();
-                    double ffinal = farenheit(c);
-                    System.out.printf("The farenheit value of the celcius "
-                            + "temperature is %.2f", ffinal);
-                    break;
-                   
+                   System.out.print("\nEnter celsius temperature: ");
+                   Scanner input = new Scanner (System.in);
+                   double temp_in  = input.nextDouble();
+                   double temp_out = c2f(temp_in);
+                   System.out.printf("The fahrenheit value of the celsius %.2f temperature is %.2f\n", temp_in, temp_out);
+                   break;
                 }
                
-                case 3:
+                default:
                 {
-                    break;  
+                   break;  
                 }
-             
             }
-        System.out.print("1. Farenheit to Celcius conversion\n");
-        System.out.print("2. Celcius to Farenheit conversion\n");
-        System.out.print("3. Quit\n");
 
-        z = input.nextInt();
+            z = get_selection();
         }
-     
+
+        System.out.printf("\nBye!\n\n");
+
     }
    
 }
