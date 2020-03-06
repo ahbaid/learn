@@ -28,8 +28,6 @@ public class prime
 
     public static void get_primes(int nprimes, int startn)
     {
-  
-
        int i=1;
        int evaln=startn;
        while (i<=nprimes)
