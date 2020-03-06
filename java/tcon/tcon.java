@@ -15,8 +15,8 @@ public class tcon
     public static int get_selection()
     {
        System.out.print("\n========================================\n");
-       System.out.print("1. Farenheit to Celcius conversion\n");
-       System.out.print("2. Celcius to Farenheit conversion\n");
+       System.out.print("1. Fahrenheit to Celsius conversion\n");
+       System.out.print("2. Celsius to Fahrenheit conversion\n");
        System.out.print("3. Quit\n");
        System.out.print("========================================\n");
        System.out.print("Selection: ");
