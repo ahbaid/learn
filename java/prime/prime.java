@@ -35,9 +35,9 @@ public class prime {
        boolean foundOne=false;
 
        if (verbose=='y') {
-          System.out.printf("\nEvaluating from %d -> %d showing all results...\n\n",startn,startn+nprimes);
+          System.out.printf("\nEvaluating from %d -> %d showing all results...\n\n",startn,startn+nprimes-1);
        } else {
-          System.out.printf("\nEvaluating from %d -> %d showing only prime results...\n\n",startn,startn+nprimes);
+          System.out.printf("\nEvaluating from %d -> %d showing only prime results...\n\n",startn,startn+nprimes-1);
        }
 
        while (i<=nprimes) {
@@ -45,13 +45,13 @@ public class prime {
            if (is_prime(evaln)) {
               foundOne=true;
               if (verbose=='y') {
-                  System.out.printf("%02d. Evaluated %3d as PRIME\n",i,evaln);
+                  System.out.printf("%02d. %3d is PRIME\n",i,evaln);
               } else {
                   System.out.printf("%d,",evaln);
               }
            } else {
               if (verbose=='y') {
-                  System.out.printf("%02d. Evaluated %3d as NOT-PRIME\n",i,evaln);
+                  System.out.printf("%02d. %3d is NOT-PRIME\n",i,evaln);
               } 
            }
 
