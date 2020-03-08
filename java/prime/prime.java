@@ -22,6 +22,7 @@ public class prime {
     /**
     * Get a character and return it.  
     * @param s This is the string to prompt with.
+    * @return char The character to return.
     */
     public static char get_char(String s) {
        System.out.print(s);
@@ -32,6 +33,7 @@ public class prime {
     /**
     * Get an integer and return it.  
     * @param s This is the string to prompt with.
+    * @return int The integer to return.
     */
     public static int get_number(String s) {
        System.out.print(s);
@@ -46,6 +48,8 @@ public class prime {
     * 3. The number is now odd. Assume it's a prime.
     *    Check to see if it's not prime by modulus division with all odd numbers greater than 1 up to n-1 for 0 remainder. 
     *    If a zero remainder is found then it's not a prime.
+    * @param n Number to test.
+    * @return boolean Is the number a prime?
     */
     public static boolean is_prime(int n) {
        boolean Prime = true;
@@ -120,7 +124,6 @@ public class prime {
     /**
     * The main method.
     * @param args Unused.
-    * @return Nothing.
     */
     public static void main(String args[]) {
         banner();
