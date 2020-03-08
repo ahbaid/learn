@@ -18,14 +18,29 @@ public class prime {
        return Keyboard.nextInt();
     }
  
+    /**
+    * Brute force calculation of primes by checking:
+    * 1. Is the number 1, 2 or 3? Then it's a prime.
+    * 2. Is the number not above? Then check if it's even, if so it's not a prime.
+    * 3. The number is now odd. Check to see if it's prime by modulus division with all odd numbers greater than 1 up to n-1 for 0 remainder. 
+    *    If a zero remainder is foudn then it's not a prime.
+    */
     public static boolean is_prime(int n) {
-       if (n==2 || n==1) {
+       boolean Prime = true;
+       if (n>=1 && n<=3) {
           return true;
-       } 
-       else if ((n % 2)==0) {
+       } else if ((n % 2)==0) {
           return false;
+       } else {
+          int i=3;
+          while ((i<n) && (Prime)) {
+            if ((n % i)==0) {
+              Prime=false;
+            } 
+            i+=2;
+          }
        }
-       return false;
+       return Prime;
     }
 
     public static void get_primes(int nprimes, int startn, char verbose) {
@@ -68,7 +83,7 @@ public class prime {
  
     public static void main(String args[]) {
         banner();
-        int  n = get_number("How many primes? ");
+        int  n = get_number("How many integers to process? ");
         int  s = get_number("Integer to start from? ");
         char v = get_char("Show non-primes(y/n)? ");
         get_primes(n,s,v);
