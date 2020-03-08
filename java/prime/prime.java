@@ -43,11 +43,12 @@ public class prime {
        return Prime;
     }
 
-    public static void get_primes(int nprimes, int startn, char verbose) {
+    public static int get_primes(int nprimes, int startn, char verbose) {
 
        int i=1;
        int evaln=startn;
        boolean foundOne=false;
+       int primesFound=0;
 
        if (verbose=='y') {
           System.out.printf("\nEvaluating from %d -> %d showing all results...\n\n",startn,startn+nprimes-1);
@@ -58,12 +59,16 @@ public class prime {
        while (i<=nprimes) {
 
            if (is_prime(evaln)) {
+
               foundOne=true;
+              primesFound++;
+
               if (verbose=='y') {
                   System.out.printf("%02d. %3d is PRIME\n",i,evaln);
               } else {
                   System.out.printf("%d,",evaln);
               }
+
            } else {
               if (verbose=='y') {
                   System.out.printf("%02d. %3d is NOT-PRIME\n",i,evaln);
@@ -79,6 +84,8 @@ public class prime {
           System.out.printf("\n");
        }
 
+       return primesFound;
+
     }
  
     public static void main(String args[]) {
@@ -86,8 +93,9 @@ public class prime {
         int  n = get_number("How many integers to process? ");
         int  s = get_number("Integer to start from? ");
         char v = get_char("Show non-primes(y/n)? ");
-        get_primes(n,s,v);
+        int  p = get_primes(n,s,v);
         System.out.printf("\n");
+        System.out.printf("Found %d primes from %d to %d.\n\n",p,s,s+n-1);
     }
    
 }
