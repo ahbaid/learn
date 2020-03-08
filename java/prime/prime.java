@@ -22,8 +22,9 @@ public class prime {
     * Brute force calculation of primes by checking:
     * 1. Is the number 1, 2 or 3? Then it's a prime.
     * 2. Is the number not above? Then check if it's even, if so it's not a prime.
-    * 3. The number is now odd. Check to see if it's prime by modulus division with all odd numbers greater than 1 up to n-1 for 0 remainder. 
-    *    If a zero remainder is foudn then it's not a prime.
+    * 3. The number is now odd. Assume it's a prime.
+    *    Check to see if it's not prime by modulus division with all odd numbers greater than 1 up to n-1 for 0 remainder. 
+    *    If a zero remainder is found then it's not a prime.
     */
     public static boolean is_prime(int n) {
        boolean Prime = true;
