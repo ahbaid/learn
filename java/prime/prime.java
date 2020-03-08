@@ -1,17 +1,38 @@
 import java.util.Scanner;
+/**
+* <h1>Find prime numbers</h1>
+* The prime class takes input form the user for the range and style of output.
+* It then proceeds to evaluate each nubmer for it being a prime or not.
+* Results are returned along with a count of the number of primes found.
+*
+* @author Ahbaid Gaffoor
+* @version 0.1
+* @since 03/07/2020
+*/
 public class prime {
    
+    /**
+    * Just a banner.
+    */
     public static void banner() {
        System.out.printf("\nPrime Generator v0.1\n");
        System.out.printf("=============================\n");
     }
 
+    /**
+    * Get a character and return it.  
+    * @param s This is the string to prompt with.
+    */
     public static char get_char(String s) {
        System.out.print(s);
        Scanner Keyboard = new Scanner (System.in);
        return Keyboard.next().charAt(0);
     }
 
+    /**
+    * Get an integer and return it.  
+    * @param s This is the string to prompt with.
+    */
     public static int get_number(String s) {
        System.out.print(s);
        Scanner Keyboard = new Scanner (System.in);
@@ -44,6 +65,13 @@ public class prime {
        return Prime;
     }
 
+    /**
+    * This is the method that iterates across the range and handles the logic for output.
+    * @param nprimes The number of integers to consider.
+    * @param startn The integer to start from.
+    * @param verbose Governs the output verbosity.
+    * @return int The number of primes found.
+    */
     public static int get_primes(int nprimes, int startn, char verbose) {
 
        int i=1;
@@ -89,6 +117,11 @@ public class prime {
 
     }
  
+    /**
+    * The main method.
+    * @param args Unused.
+    * @return Nothing.
+    */
     public static void main(String args[]) {
         banner();
         int  n = get_number("How many integers to process? ");
