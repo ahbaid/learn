@@ -1,12 +1,83 @@
 # prime.java
+
+## Verbose Output:
 ~~~~
 Prime Generator v0.1
 =============================
-How many primes? 5
+How many integers to process? 25
 Integer to start from? 1
-01. Evaluating  1 : PRIME
-02. Evaluating  2 : PRIME
-03. Evaluating  3 : Odd, Could be prime.... more code please.....
-04. Evaluating  4 : Even
-05. Evaluating  5 : Odd, Could be prime.... more code please.....
+Show non-primes(y/n)? y
+
+Evaluating from 1 -> 25 showing all results...
+
+01.   1 is PRIME
+02.   2 is PRIME
+03.   3 is PRIME
+04.   4 is NOT-PRIME
+05.   5 is PRIME
+06.   6 is NOT-PRIME
+07.   7 is PRIME
+08.   8 is NOT-PRIME
+09.   9 is NOT-PRIME
+10.  10 is NOT-PRIME
+11.  11 is PRIME
+12.  12 is NOT-PRIME
+13.  13 is PRIME
+14.  14 is NOT-PRIME
+15.  15 is NOT-PRIME
+16.  16 is NOT-PRIME
+17.  17 is PRIME
+18.  18 is NOT-PRIME
+19.  19 is PRIME
+20.  20 is NOT-PRIME
+21.  21 is NOT-PRIME
+22.  22 is NOT-PRIME
+23.  23 is PRIME
+24.  24 is NOT-PRIME
+25.  25 is NOT-PRIME
+
+
+Found 10 primes from 1 to 25.
+
+~~~~
+
+## Non-verbose Output:
+~~~~
+Prime Generator v0.1
+=============================
+How many integers to process? 100
+Integer to start from? 1
+Show non-primes(y/n)? n
+
+Evaluating from 1 -> 100 showing only prime results...
+
+1,2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,
+
+Found 26 primes from 1 to 100.
+~~~~
+
+## Trial Division method 1 to 1,000,000
+~~~~
+....
+999491,999499,999521,999529,999541,999553,999563,999599,999611,999613,999623,999631,999653,999667,999671,999683,999721,999727,999749,999763,999769,999773,999809,999853,999863,999883,999907,999917,999931,999953,999959,999961,999979,999983,
+
+Found 78499 primes from 1 to 1000000.
+
+
+real	1m14.851s
+user	1m3.331s
+sys	0m0.416s
+~~~~
+
+## Trial Division method 1 to 10,000,000
+~~~~
+....
+98423,9998441,9998447,9998459,9998479,9998539,9998543,9998557,9998561,9998581,9998587,9998603,9998623,9998633,9998641,9998689,9998699,9998701,9998719,9998741,9998743,9998749,9998753,9998777,9998797,9998801,9998809,9998851,9998861,9998867,9998887,9998893,9998903,9998929,9998969,9998971,9998977,9999047,9999049,9999053,9999071,9999083,9999161,9999163,9999167,9999193,9999217,9999221,9999233,9999271,9999277,9999289,9999299,9999317,9999337,9999347,9999397,9999401,9999419,9999433,9999463,9999469,9999481,9999511,9999533,9999593,9999601,9999637,9999653,9999659,9999667,9999677,9999713,9999739,9999749,9999761,9999823,9999863,9999877,9999883,9999889,9999901,9999907,9999929,9999931,9999937,9999943,9999971,9999973,9999991,
+
+Found 664580 primes from 1 to 10000000.
+
+
+real	78m7.367s
+user	77m58.051s
+sys	0m3.248s
 ~~~~
