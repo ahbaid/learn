@@ -5,5 +5,5 @@
 | ---- | ---- |
 | Headers | https://www.learncpp.com/cpp-tutorial/header-files/ |
 | Classes with Headers | https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/ |
+| gcc / g++ docs | https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html |
 
-## Sample code
