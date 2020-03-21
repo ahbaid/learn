@@ -1,13 +1,13 @@
 CC=g++
 
 simplemath: 
-	$(CC) simplemath.cpp; ls -alh
+	$(CC) -c simplemath.cpp; ls -alh simplemath.o
 
 main: simplemath
-	$(CC) -o main main.cpp; ls -alh
+	$(CC) simplemath.o main.cpp -o main; ls -alh
 
 clean:
-	rm main; rm simplemath; ls -alh
+	rm main; rm simplemath.o; ls -alh
 
 all: main 
 	./main
