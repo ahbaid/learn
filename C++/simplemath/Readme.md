@@ -79,7 +79,7 @@ The sum of 3 and 4 is: 7
 
 ## Appendix
 
-### A: simplemath.cpp source code
+### A: Source Code (simplemath.cpp)
 ~~~~
 ahbaidg@safa:~/github/learn/C++/simplemath[20]$ more simplemath.cpp 
 float sum(float a, float b) {
@@ -102,8 +102,9 @@ float square(float a) {
    return mul(a,a);
 ~~~~
 
-### B: Preprocess Output
+### B: Preprocessed Output (simplemath.i)
 ~~~~
+ahbaidg@safa:~/github/learn/C++/simplemath[6]$ cpp -v simplemath.cpp > simplemath.i; cat simplemath.i
 Using built-in specs.
 COLLECT_GCC=cpp
 OFFLOAD_TARGET_NAMES=nvptx-none
@@ -133,8 +134,12 @@ LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/..
 COLLECT_GCC_OPTIONS='-E' '-v' '-mtune=generic' '-march=x86-64'
 ~~~~
 
-### C: Assembler Code: simplemath.s
+### C: Assembler Code (simplemath.s)
 ~~~~
+ahbaidg@safa:~/github/learn/C++/simplemath[13]$ g++ -S simplemath.i
+ahbaidg@safa:~/github/learn/C++/simplemath[15]$ ls -al simplemath.s
+-rw-rw-r-- 1 ahbaidg ahbaidg 1952 Mar 21 16:59 simplemath.s
+ahbaidg@safa:~/github/learn/C++/simplemath[15]$ more simplemath.s
 	.file	"simplemath.cpp"
 	.text
 	.globl	_Z3sumff
