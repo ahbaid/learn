@@ -1,12 +1,5 @@
 # C++ Compilation Breakdown
 
-## Reference Links
-| Desc | Link |
-| ---- | ---- |
-| Headers | https://www.learncpp.com/cpp-tutorial/header-files/ |
-| Classes with Headers | https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/ |
-| gcc / g++ docs | https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html |
-
 ## Summary:
 When code is compiled there's a lot going on behind the scenes. Take the following example.
 ~~~~
@@ -272,3 +265,9 @@ _Z6squaref:
 	.section	.note.GNU-stack,"",@progbits
 ~~~~
 
+## Reference
+| Desc | Link |
+| ---- | ---- |
+| Headers | https://www.learncpp.com/cpp-tutorial/header-files/ |
+| Classes with Headers | https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/ |
+| gcc / g++ docs | https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html |
