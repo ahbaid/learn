@@ -79,7 +79,7 @@ The sum of 3 and 4 is: 7
 
 ## Appendix
 
-### A: Source for compiler steps referenced below:
+### A: simplemath.cpp source code
 ~~~~
 ahbaidg@safa:~/github/learn/C++/simplemath[20]$ more simplemath.cpp 
 float sum(float a, float b) {
