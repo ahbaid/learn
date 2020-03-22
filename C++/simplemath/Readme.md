@@ -1,4 +1,4 @@
-# Header Files
+# C++ Compilation Breakdown
 
 ## Reference Links
 | Desc | Link |
@@ -6,6 +6,28 @@
 | Headers | https://www.learncpp.com/cpp-tutorial/header-files/ |
 | Classes with Headers | https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/ |
 | gcc / g++ docs | https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html |
+
+## Summary:
+When code is compiled there's a lot going on behind the scenes. Take the following example.
+~~~~
+ahbaidg@safa:~/github/learn/C++[35]$ cat hello.cpp 
+#include <iostream>
+
+int main() {
+   std::cout << "Hello World!\n";
+   return 0;
+}
+ahbaidg@safa:~/github/learn/C++[36]$ g++ -o hello hello.cpp
+ahbaidg@safa:~/github/learn/C++[37]$ ls -al hello
+-rwxrwxr-x 1 ahbaidg ahbaidg 8776 Mar 22 11:47 hello
+ahbaidg@safa:~/github/learn/C++[38]$ ./hello 
+Hello World!
+~~~~
+When the above code is compiled with the g++ compiler it produces an executable. Behind the scenes several steps are taking place:
+1. *Pre-Process*: The code is preprocessed to expand references and produces pre-processed code.
+2. *Assemble*: The pre-processed code is then assembled to produce machine code object files for the target platform.
+3. *Link*: The object files are then linked and the target program is produced to be run.
+
 
 ## Compilation Steps
 
