@@ -10,10 +10,10 @@
 ## Compilation Steps
 
 ### Preprocess
+* This step expands source code referrencing all needed areas
 ~~~~
 ahbaidg@safa:~/github/learn/C++/simplemath[6]$ cpp -v simplemath.cpp > simplemath.i
 ~~~~
-* This step expands source code referrencing all needed areas
 
 ~~~~
 ahbaidg@safa:~/github/learn/C++/simplemath[10]$ more simplemath.i
