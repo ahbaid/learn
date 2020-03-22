@@ -29,11 +29,11 @@ When the above code is compiled with the g++ compiler it produces an executable.
 
 ### Preprocess
 * This step expands source code referrencing all needed areas
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[6]$ cpp -v simplemath.cpp > simplemath.i
-~~~~
+```
 
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[10]$ more simplemath.i
 # 1 "simplemath.cpp"
 # 1 "<built-in>"
@@ -60,30 +60,29 @@ float div(float a, float b) {
 float square(float a) {
    return mul(a,a);
 }
-~~~~
+```
 
 ### Compile
-~~~~
-~~~~
 * The compiler takes the pre-processed source code into assembly (machine) code for the platform architecture.
 
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[13]$ g++ -S simplemath.i
 ahbaidg@safa:~/github/learn/C++/simplemath[15]$ ls -al simplemath.s
 -rw-rw-r-- 1 ahbaidg ahbaidg 1952 Mar 21 16:59 simplemath.s
-~~~~
+```
 
 ### Assemble
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[22]$ as -o simplemath.o simplemath.s
 ahbaidg@safa:~/github/learn/C++/simplemath[23]$ ls -al simplemath.o
 -rw-rw-r-- 1 ahbaidg ahbaidg 1824 Mar 21 17:04 simplemath.o
-~~~~
+```
+
 * Take the assembler instructions and convert to machine code in an object file "simplemath.o"
 
 ### Link
 * Finally link the object file to the target program being compiled.
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[26]$ g++ simplemath.o math.cpp -o math
 ahbaidg@safa:~/github/learn/C++/simplemath[27]$ ls -al math
 -rwxrwxr-x 1 ahbaidg ahbaidg 9016 Mar 21 17:07 math
@@ -92,14 +91,15 @@ ahbaidg@safa:~/github/learn/C++/simplemath[28]$ ./math
 Simple Math Demo
 ================
 The sum of 3 and 4 is: 7
-~~~~
-
+```
 
 ## Appendix
 
-### A: Source Code (simplemath.cpp)
-~~~~
+### A: Source Code (simplemath.cpp & simplemath.h)
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[20]$ more simplemath.cpp 
+```
+```c++
 float sum(float a, float b) {
    return a+b;
 }
@@ -118,10 +118,26 @@ float div(float a, float b) {
 
 float square(float a) {
    return mul(a,a);
-~~~~
+}
+```
+```bash
+ahbaidg@safa:~/github/learn/C++/simplemath[20]$ more simplemath.h
+```
+```c++
+#ifndef SIMPLEMATH_H
+#define SIMPLEMATH_H
+
+float sum(float a, float b);
+float sub(float a, float b);
+float mul(float a, float b);
+float div(float a, float b);
+float square(float a);
+
+#endif
+```
 
 ### B: Preprocessed Output (simplemath.i)
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[6]$ cpp -v simplemath.cpp > simplemath.i; cat simplemath.i
 Using built-in specs.
 COLLECT_GCC=cpp
@@ -150,10 +166,10 @@ End of search list.
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
 COLLECT_GCC_OPTIONS='-E' '-v' '-mtune=generic' '-march=x86-64'
-~~~~
+```
 
 ### C: Assembler Code (simplemath.s)
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++/simplemath[13]$ g++ -S simplemath.i
 ahbaidg@safa:~/github/learn/C++/simplemath[15]$ ls -al simplemath.s
 -rw-rw-r-- 1 ahbaidg ahbaidg 1952 Mar 21 16:59 simplemath.s
@@ -266,7 +282,7 @@ _Z6squaref:
 	.size	_Z6squaref, .-_Z6squaref
 	.ident	"GCC: (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0"
 	.section	.note.GNU-stack,"",@progbits
-~~~~
+```
 
 ## Reference
 | Desc | Link |
