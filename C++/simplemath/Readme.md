@@ -2,9 +2,9 @@
 
 ## Summary:
 When code is compiled there's a lot going on behind the scenes. Take the following example.
-~~~~
+```bash
 ahbaidg@safa:~/github/learn/C++[35]$ cat hello.cpp 
-~~~~
+```
 ```c++
 #include <iostream>
 int main() {
