@@ -1,4 +1,4 @@
-#Magic Squares
+Magic Squares
 
 ## The problem:
 Given 16 numbers 1 through 16 and a 4 x 4 grid of squares:
