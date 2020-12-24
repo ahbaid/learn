@@ -1,0 +1,22 @@
+# {{{ github
+host git
+   hostname=github.com
+   User=git
+   UserKnownHostsFile=/dev/null
+   IdentityFile=/Users/ahbaid/.ssh/id_mygit_rsa
+   StrictHostKeyChecking=no
+
+host github
+   hostname=github.com
+   User=git
+   UserKnownHostsFile=/dev/null
+   IdentityFile=/Users/ahbaid/.ssh/id_mygit_rsa
+   StrictHostKeyChecking=no
+
+host github.com
+   hostname=github.com
+   User=git
+   UserKnownHostsFile=/dev/null
+   IdentityFile=/Users/ahbaid/.ssh/id_mygit_rsa
+   StrictHostKeyChecking=no
+# }}}
