@@ -1,0 +1,10 @@
+# File format
+# FirstName:LastName:Email:Phone1:Phone2
+# Fields are separated by ":"
+# All fields are required, except phone1 and phone2 which are both optional
+# All lines that start with # are comments and ignored
+Mickey:Mouse:mmouse@disney.com:213-123-1234:
+Donald:Duck:dduck@disney.com:213-123-1235:213-321-1456
+Tom:Cat:tcat@wb.com::
+Jerry:Mouse:jmouse@wb.com:567-657-5670:
+
