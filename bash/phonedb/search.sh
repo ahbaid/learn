@@ -35,5 +35,16 @@ if [ $# -ge 2 ]; then
      echo "Dump raw file $DATAFILE"
      cat $DATAFILE | grep -v ^#
      echo
+  elif [ $2 == "search" ]; then
+     if [ $3 ]; then
+        echo
+        echo "Searching file $DATAFILE for $3"
+        cat $DATAFILE | grep -v ^# | grep -i $3
+        echo
+     else
+        echo
+        echo "Need a string to search for"
+        echo
+     fi
   fi
 fi
